@@ -1,16 +1,12 @@
-const reducer = (state, action) => {
+export const stateReducer = (state, action) => {
     switch (action.type) {
-        case 'input':
-            return {
-                ...state,
-                [action.field]: action.payload,
-            };
-        case 'check':
-            return {
-                ...state,
-                [action.field]: !state.payload
-            }
+        case 'authModal':
+            return { ...state, authModal: action.payload }
+        case 'notification':
+            return { ...state, noti: action.payload }
+        case 'login':
+            return { ...state, login: action.payload }
+        default:
+            throw new Error();
     }
 }
-
-export default reducer;

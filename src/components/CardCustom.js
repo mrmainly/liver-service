@@ -1,45 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import { CardActions, Button } from '@material-ui/core';
+import { Box, Typography, CardMedia, CardActionArea } from '@material-ui/core'
+import { useNavigate } from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 280,
-        marginTop: 20
+        marginBottom: 20,
+        boxShadow: '1px 2px 10px rgba(0, 0, 0, 0.1)',
     },
-    media: {
-        height: 180,
-    },
-});
+    mainBlock: {
+        display: 'flex',
+        justifyContent: 'start',
+        alignItems: 'start',
+        padding: 10,
+        [theme.breakpoints.down('xs')]: {
+            padding: 5,
+            flexDirection: 'column'
 
-export default function CardCustom({ img, title, description }) {
+        },
+    },
+    img: {
+        width: 160,
+        height: 178,
+        borderRadius: 5,
+        [theme.breakpoints.down('xs')]: {
+            width: '100%',
+
+        },
+    },
+    cardContent: {
+        marginLeft: 10,
+        width: '100%',
+        height: 178,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+    },
+    infoBlock: {
+        display: 'flex'
+    },
+    tagsBlock: {
+        display: 'flex',
+        marginLeft: '-5px',
+        flexWrap: 'wrap',
+    },
+}));
+const Card = ({ img, description, title, id }) => {
+    const [showElem, setShowElem] = useState(false)
     const classes = useStyles();
+    const navigate = useNavigate()
 
     return (
-        <Card className={classes.root}>
-            <CardActionArea>
+        <Box className={classes.root}>
+            <CardActionArea
+                className={classes.mainBlock}
+                onClick={() => navigate(`/blog-inside/${id}`,
+                    { id: id },
+                )}
+            >
                 <CardMedia
-                    className={classes.media}
+                    component="img"
+                    alt="Contemplative Reptile"
                     image={img}
-                    title="Contemplative Reptile"
+                    className={classes.img}
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                <Box className={classes.cardContent}>
+                    <Typography variant="h6">
                         {title}
                     </Typography>
-                    <Typography variant="body2" component="p">
+                    <Typography variant="body1">
                         {description}
                     </Typography>
-                </CardContent>
-                <CardActions>
-                    <Button variant="text" color="primary">Перейти</Button>
-                </CardActions>
+                </Box>
             </CardActionArea>
-        </Card>
+        </Box>
     );
 }
+
+export default Card

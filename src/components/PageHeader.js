@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
-import { useGlobalClasses } from "./Global";
 import { mainTheme } from "../styles";
 
 import { ExtraLargeHeader } from "./ExtraLargeHeader";
@@ -12,7 +10,6 @@ const useStyles = makeStyles({
         maxWidth: 800,
         margin: 'auto'
     },
-
     title: {
         fontWeight: 500,
         color: mainTheme.colors.darkBlue,
@@ -30,13 +27,12 @@ const useStyles = makeStyles({
 
 export const PageHeader = ({ name, title, description }) => {
     const classes = useStyles()
-    const globalClasses = useGlobalClasses()
 
     return (
-        <Box className={classes.container} pt={10} pb={10}>
-            <Typography className={globalClasses.redTitle}>{name}</Typography>
+        <Box className={classes.container} >
+            <Typography >{name}</Typography>
             <ExtraLargeHeader>{title}</ExtraLargeHeader>
-            <Typography className={`${globalClasses.regularText} ${classes.description}`}>{description}</Typography>
+            <Typography >{description}</Typography>
         </Box>
     );
 };

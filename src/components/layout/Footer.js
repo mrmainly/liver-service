@@ -5,7 +5,7 @@ import { Container, } from '@material-ui/core';
 
 export default function Footer(props) {
     return (
-        <footer className="footer py-8 py-md-11 border-multicolor" style={{ backgroundColor: '#094876', paddingTop: 50, paddingBottom: 50 }}>
+        <footer className="footer py-8 py-md-11 border-multicolor" style={{ backgroundColor: '#094876', paddingTop: 50, paddingBottom: 50, marginTop: 100 }}>
             {/* <Container>
                 <div className="container-lg">
                     <div className="row">

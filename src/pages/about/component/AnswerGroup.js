@@ -4,19 +4,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        backgroundImage: `url(${"/image/Element/Rectangle180.png"})`,
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: 'white',
         width: '100%',
-        height: 800,
+        minHeight: 800,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundPosition: 'center',
-        [theme.breakpoints.down('sm')]: {
-            backgroundImage: `none`,
-            backgroundPosition: 'center',
-            marginBottom: 200
-        },
+        boxShadow: '1px 14px 25px rgba(0, 0, 0, 0.22)',
+        borderRadius: 20,
         [theme.breakpoints.down('xs')]: {
             marginTop: 120
         },
@@ -29,8 +24,12 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         [theme.breakpoints.down('sm')]: {
             flexDirection: 'column',
-            marginTop: 110,
+            marginTop: 350,
         },
+        [theme.breakpoints.down('xs')]: {
+            marginTop: 100
+        },
+        padding: 20,
     },
     card: {
         marginTop: 35,
@@ -38,17 +37,14 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 15,
         display: 'flex',
         flexDirection: 'row',
-        [theme.breakpoints.down('sm')]: {
-            color: 'white'
-        },
+
     },
     title: {
-        marginTop: '-50px',
-        marginBottom: 80,
+        marginBottom: 30,
         [theme.breakpoints.down('sm')]: {
             textAlign: 'center',
             marginBottom: 30,
-            color: 'white'
+            color: 'black'
         },
     },
     box_title: {
@@ -63,53 +59,41 @@ const SentenceAbout = () => {
     const object = [
         {
             title: 'Безопасно',
-            description: 'С помощью сервиса Вы сможете соблюдать правильный прием лекарств, минимизируя побочные эффекты на организм.',
+            description: 'Если вы просматриваете наш сайт, наверняка уже знакомы с темой трансплантации органов. Наша команда —  это пациенты с донорскими органами, и люди, которые ждут трансплантацию органов, близкие родственники, друзья, а также врачи нефрологи, инфекционисты, трансплантологи, хирурги и терапевты — все, которые спасают жизни и поддерживают людей на диализе и после трансплантации органов.',
         },
         {
             title: 'Выгодно',
-            description: 'Находите все актуальные акции и скидки Вашего города на медицинские услуги в одном приложении.',
+            description: 'С 2014 года мы реализуем проект «Надежда на будущее». Этот проект осуществляется в благодарность нашим Донорам, которые пожертвовали частичку себя для того, чтобы мы могли жить полноценной жизнью. Мы радуемся каждому дню, которого не было бы, если бы не наши Доноры.',
         },
         {
             title: 'Точность',
-            description: 'Функция “Напоминания” позволит всегда отслеживать приняли Вы вовремя лекарства или нет.',
+            description: 'Проект задумывался для того, чтобы рассказать людям как сохранить здоровье почек и печени. Как и любой социальный проект, «Надежда на будущее»  — это опыт гражданской активности, который осуществляется при сотрудничестве с государственными, общественными организациями, врачами и просто людьми, которые хотят помочь другим.',
         },
         {
             title: 'Технологичность',
-            description: 'Мы развиваемся для Вас. Используются технологии НТИ, ИИ, большие данные.',
-        },
-        {
-            title: 'Безплатно',
-            description: 'Все базовые функции предоставлены для Вас бесплатно.',
-        },
-        {
-            title: 'Развитие',
-            description: 'Постоянное обновление и доработка сервиса. Мы не стоим на месте. Наши пользователи - это двигатель роста и развития.',
+            description: 'В 2014 году мы начали работать в Якутии с нашей программой «Грамотный пациент» — раздавали брошюры и оказывали информационную поддержку пациентам. Через год, мы познакомились с руководством Некоммерческого партнерства «Ассоциация частных медицинских клиник и центров Якутии» во время семинара для НКО. Это стало важным моментом развития проекта. В 2015 г., наша команда с Ассоциацией провела Всемирный День Почки в Якутске. Так развивалась наша флагманская программа «Профилактика и лечение заболеваний почек», а Ли Валерия Спиридоновна стала нашим амбассадором. В составе социальных проектов Ассоциации, мы провели 4 Всемирных Дня Почки в Якутске и в улусах республики. В поддержку развития донорства органов и в помощь пациентам с терминальными стадиями заболеваний почек, провели успешно две благотворительные фестивали «Надежда на будущее».  Сегодня мы реализуем второй социальный проект «Дар жизни» — в поддержку прижизненных доноров органов, проживающих на территории Республики Саха (Якутия). Это наше «спасибо» отцам, матерям, братьям, сестрам — за жизнь, которую они подарили нам. Этот проект Ассоциации, стал победителем первого конкурса 2020 г. Фонда Президентских грантов.',
         },
     ]
 
     return (
-        <div className={classes.container}>
-            <Container >
-
-                <Box container className={classes.content}>
-                    <Box>
-                        <Typography variant="h3" className={classes.title}>Возможности приложения</Typography>
-                    </Box>
-                    <Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', }}>
-                        {object.map((item, index) => (
-                            <Grid item key={index} className={classes.card} lg={3} sm={12} md={5} xl={3} xs={12}>
-                                <img src={'/image/Element/Urgent-mail3.png'} style={{ width: 50, height: 50 }} alt={''} />
-                                <Box>
-                                    <Typography variant="h5" className={classes.box_title}>{item.title}</Typography>
-                                    {item.description}
-                                </Box>
-                            </Grid>
-                        ))}
-                    </Grid>
+        <Container className={classes.container}>
+            <Box container className={classes.content}>
+                <Box>
+                    <Typography variant="h3" className={classes.title}>О проекте</Typography>
                 </Box>
+                <Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', }}>
+                    {object.map((item, index) => (
+                        <Grid item key={index} className={classes.card} lg={12} sm={12} md={12} xl={12} xs={12}>
+                            <img src={'/image/Element/Urgent-mail3.png'} style={{ width: 50, height: 50 }} alt={''} />
+                            <Box>
 
-            </Container>
-        </div>
+                                {item.description}
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+        </Container>
     )
 }
 

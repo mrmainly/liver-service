@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'no0repeat',
         backgroundSize: 'cover',
         height: 600,
-        marginBottom: 200,
+        marginBottom: 100,
         [theme.breakpoints.down('sm')]: {
             marginTop: 0,
             marginBottom: 0,
@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
     },
     text_box: {
         marginBottom: '-100px',
-        marginTop: 100,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -56,21 +55,20 @@ const useStyles = makeStyles((theme) => ({
 
 const StartedBlog = () => {
     const classes = useStyles()
-    const history = useNavigate()
+    const navigate = useNavigate()
     return (
         <div className={classes.container}>
             <Container>
                 <Grid container className={classes.content}>
                     <Grid item lg={4} sm={11} md={4} xl={4} xs={11}>
-                        <Typography variant="h3"><span style={{ fontFamily: 'serif' }} className={classes} >Pocket medic</span> - все,что нужно<br /> для здоровья.</Typography>
+                        <Typography variant="h3">Паллиативная медицинская помощь в Якутии</Typography>
                         <Box className={classes.text_box}>
-                            <Typography>Не знаете где посмотреть акции на платные медицинские услуги и как экономить?</Typography>
                             <Box className={classes.button_box}>
-                                <ButtonCustom text={'Установить'} />
+                                <ButtonCustom text={'Новости'} />
                                 <ButtonCustom text={'Узнать подробнее'} />
                             </Box>
                             <Box style={{ marginTop: 20, marginBottom: 50 }}>
-                                <ButtonCustom text="политика конфедициальности" onClick={() => { history.push('/about/privacy') }} />
+                                <ButtonCustom text="политика конфедициальности" onClick={() => { navigate('/about/privacy') }} />
                             </Box>
                         </Box>
                     </Grid>

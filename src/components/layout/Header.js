@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
     AppBar,
     Toolbar,
@@ -15,6 +15,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { Link as RouterLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
 import ButtonCustom from '../ButtonCustom'
+import { DispatchContext } from "../../store";
 
 const headersData = [
     {
@@ -23,10 +24,6 @@ const headersData = [
     },
     {
         label: "Новости",
-        href: "/application",
-    },
-    {
-        label: "Блог",
         href: "/blog",
     },
     {
@@ -34,8 +31,8 @@ const headersData = [
         href: "/team",
     },
     {
-        label: "Партнеры",
-        href: "/team",
+        label: "Трансплантация органов",
+        href: "/faq",
     },
 ];
 const useStyles = makeStyles(() => ({
@@ -71,7 +68,8 @@ const useStyles = makeStyles(() => ({
 
 export default function Header() {
     const { header, menuButton, toolbar, drawerContainer } = useStyles();
-    const history = useNavigate()
+    const dispatch = useContext(DispatchContext)
+    const navigate = useNavigate()
 
     const [state, setState] = useState({
         mobileView: false,
@@ -149,12 +147,12 @@ export default function Header() {
         });
     };
     const ButtonAuth = () => {
-        return <Box ><ButtonCustom text="Вход" onClick={() => { history.push('/auth') }} /></Box>
+        return <Box ><ButtonCustom text="Вход" onClick={() => { dispatch({ type: 'authModal', payload: { login: true } }) }} /></Box>
     }
     const femmecubatorLogo = (
         <div style={{ display: 'flex', flexDirection: 'row', marginRight: 15 }}>
             <img src={'/image/Group/Group3.png'} style={{ width: 40, height: 40, cursor: 'pointer', }} alt={''} onClick={() => {
-                history.push('/')
+                navigate('/')
             }} />
             <Typography style={{ color: 'rgba(130, 27, 14, 1)', marginLeft: 5, }}>Паллиативная<br /> Помощь</Typography>
 
