@@ -66,7 +66,7 @@ export default function Header() {
         },
         {
             label: "Новости",
-            href: "/blog",
+            href: "/news",
         },
         {
             label: "Паллиативная медицинская помощь",

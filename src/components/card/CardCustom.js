@@ -53,7 +53,7 @@ const Card = ({ img, description, title, id }) => {
         <Box className={classes.root}>
             <CardActionArea
                 className={classes.mainBlock}
-                onClick={() => navigate(`/blog-inside/${id}`,
+                onClick={() => navigate(`/news-inside/${id}`,
                     { id: id },
                 )}
             >
