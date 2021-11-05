@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Typography, Box, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import ButtonCustom from '../../../components/ButtonCustom'
+import { Button } from '../../../components'
 
 import { useNavigate } from 'react-router-dom'
 
@@ -64,11 +64,11 @@ const StartedBlog = () => {
                         <Typography variant="h3">Паллиативная медицинская помощь в Якутии</Typography>
                         <Box className={classes.text_box}>
                             <Box className={classes.button_box}>
-                                <ButtonCustom text={'Новости'} />
-                                <ButtonCustom text={'Узнать подробнее'} />
+                                <Button text={'Новости'} />
+                                <Button text={'Узнать подробнее'} />
                             </Box>
                             <Box style={{ marginTop: 20, marginBottom: 50 }}>
-                                <ButtonCustom text="политика конфедициальности" onClick={() => { navigate('/about/privacy') }} />
+                                <Button text="политика конфедициальности" onClick={() => { navigate('/about/privacy') }} />
                             </Box>
                         </Box>
                     </Grid>

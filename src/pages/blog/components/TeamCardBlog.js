@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import CardCustom from '../../../components/CardCustom'
+import CardCustom from '../../../components/card/CardCustom'
 
 const useStyles = makeStyles(() => ({
     title__yellow: {

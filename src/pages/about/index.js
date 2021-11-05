@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../components/layout/Layout'
+import Layout from '../../components/layout'
 import StartedBlog from './component/StartedBlog'
 import AnswerGroup from './component/AnswerGroup'
 import { makeStyles } from '@material-ui/core/styles';

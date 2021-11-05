@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../components/layout/Layout'
+import Layout from '../../components/layout'
 import FirstBlog from './components/FirstBlog'
 import { makeStyles } from '@material-ui/core/styles'
 import TeamCardBlog from './components/TeamCardBlog'

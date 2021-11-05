@@ -7,34 +7,15 @@ import {
     Button,
     IconButton,
     Drawer,
-    Link,
+    Menu,
     MenuItem,
     Box
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import { Link as RouterLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
-import ButtonCustom from '../ButtonCustom'
 import { DispatchContext } from "../../store";
+import { Link } from 'react-router-dom'
 
-const headersData = [
-    {
-        label: "О нас",
-        href: "/",
-    },
-    {
-        label: "Новости",
-        href: "/blog",
-    },
-    {
-        label: "Паллиативная медицинская помощь",
-        href: "/team",
-    },
-    {
-        label: "Трансплантация органов",
-        href: "/faq",
-    },
-];
 const useStyles = makeStyles(() => ({
     header: {
         backgroundColor: "white",
@@ -53,6 +34,7 @@ const useStyles = makeStyles(() => ({
         fontWeight: 600,
         size: "18px",
         marginLeft: "38px",
+        color: '#1B1642'
     },
     toolbar: {
         display: "flex",
@@ -64,13 +46,37 @@ const useStyles = makeStyles(() => ({
         color: '#1B1642',
         height: '100%'
     },
+    linkStyle: {
+        textDecoration: 'none',
+        color: 'black'
+    }
 }));
 
 export default function Header() {
-    const { header, menuButton, toolbar, drawerContainer } = useStyles();
+    const { header, menuButton, toolbar, drawerContainer, linkStyle } = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(false)
+    const [openStatus, setOpenStatus] = React.useState(false)
     const dispatch = useContext(DispatchContext)
     const navigate = useNavigate()
+    const headersData = [
+        {
+            label: "О нас",
+            href: "/",
 
+        },
+        {
+            label: "Новости",
+            href: "/blog",
+        },
+        {
+            label: "Паллиативная медицинская помощь",
+            state: setAnchorEl
+        },
+        {
+            label: "Трансплантация органов",
+            state: setOpenStatus
+        },
+    ];
     const [state, setState] = useState({
         mobileView: false,
         drawerOpen: false,
@@ -84,9 +90,7 @@ export default function Header() {
                 ? setState((prevState) => ({ ...prevState, mobileView: true }))
                 : setState((prevState) => ({ ...prevState, mobileView: false }));
         };
-
         setResponsiveness();
-
         window.addEventListener("resize", () => setResponsiveness());
     }, []);
     const displayDesktop = () => {
@@ -94,7 +98,6 @@ export default function Header() {
             <Toolbar className={toolbar}>
                 {femmecubatorLogo}
                 <div>{getMenuButtons()}</div>
-                <Box style={{ marginLeft: 15 }}>{ButtonAuth()}</Box>
             </Toolbar>
         );
     };
@@ -124,7 +127,7 @@ export default function Header() {
                         onClose: handleDrawerClose,
                     }}
                 >
-                    <div className={drawerContainer}>{getDrawerChoices()} {ButtonAuth()}</div>
+                    <div className={drawerContainer}>{getDrawerChoices()}</div>
                 </Drawer>
             </Toolbar>
         );
@@ -132,27 +135,20 @@ export default function Header() {
     const getDrawerChoices = () => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-                {headersData.map(({ label, href }) => {
+                {headersData.map((item, index) => {
                     return (
                         <Button
-                            {...{
-                                key: label,
-                                to: href,
-                                component: RouterLink,
-                                className: menuButton,
-                            }}
-                            style={{ color: '#1B1642' }}
+                            className={menuButton}
+                            onClick={() => item.type ? navigate(item.href) : setAnchorEl(true)}
+                            key={index}
                         >
-                            {label}
+                            {item.label}
                         </Button>
                     );
                 })}
             </div>
         )
     };
-    const ButtonAuth = () => {
-        return <Box ><ButtonCustom text="Вход" onClick={() => { dispatch({ type: 'authModal', payload: { login: true } }) }} /></Box>
-    }
     const femmecubatorLogo = (
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <img src={'/image/Group/Group3.png'} style={{ width: 40, height: 40, cursor: 'pointer', }} alt={''} onClick={() => {
@@ -163,21 +159,55 @@ export default function Header() {
         </div>
     );
     const getMenuButtons = () => {
-        return headersData.map(({ label, href }) => {
-            return (
-                <Button
-                    {...{
-                        key: label,
-                        to: href,
-                        component: RouterLink,
-                        className: menuButton,
-                    }}
-                    style={{ color: '#1B1642' }}
+        return (
+            <div style={{ display: 'flex' }}>
+                {headersData.map((item, index) => {
+                    return (
+                        <Button
+                            className={menuButton}
+                            onClick={() => item.href ? navigate(item.href) : item.state(true)}
+                            key={index}
+                        >
+                            {item.label}
+                        </Button>
+                    );
+                })}
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={anchorEl}
+                    onClose={() => setAnchorEl(false)}
                 >
-                    {label}
-                </Button>
-            );
-        });
+                    <Link to="/sister-care" className={linkStyle}>
+                        <MenuItem >Отделение сестринского ухода</MenuItem>
+                    </Link>
+                    <Link to="/help-family" className={linkStyle}>
+                        <MenuItem>Ресурсы центр помощи семьям</MenuItem>
+                    </Link>
+                    <Link to="/" className={linkStyle}>
+                        <MenuItem>Наши проекты</MenuItem>
+                    </Link>
+                </Menu>
+                <Menu
+                    id="simple-menu"
+                    anchorEl={openStatus}
+                    keepMounted
+                    open={openStatus}
+                    onClose={() => setOpenStatus(false)}
+                >
+                    <Link to="/bud-page" className={linkStyle}>
+                        <MenuItem>Трансплантация почки</MenuItem>
+                    </Link>
+                    <Link to="/liver-trans" className={linkStyle}>
+                        <MenuItem >Трансплантация печени</MenuItem>
+                    </Link>
+                    <Link to="/" className={linkStyle}>
+                        <MenuItem >Наши проекты</MenuItem>
+                    </Link>
+                </Menu>
+            </div>
+        )
     };
     return (
         <header>

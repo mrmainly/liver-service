@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { mainTheme } from "../styles";
 import { makeStyles, Typography } from "@material-ui/core";
 
-
 export const ExtraLargeHeader = ({ children }) => {
     const [fontSize, setFontSize] = useState(mainTheme.textSizes.extraLarge)
     useEffect(() => {
