@@ -80,7 +80,7 @@ export default function Header() {
 
     useEffect(() => {
         const setResponsiveness = () => {
-            return window.innerWidth < 900
+            return window.innerWidth < 1180
                 ? setState((prevState) => ({ ...prevState, mobileView: true }))
                 : setState((prevState) => ({ ...prevState, mobileView: false }));
         };
@@ -104,7 +104,7 @@ export default function Header() {
         const handleDrawerClose = () =>
             setState((prevState) => ({ ...prevState, drawerOpen: false }));
         return (
-            <Toolbar style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+            <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <IconButton
                     {...{
                         edge: "start",
@@ -130,27 +130,31 @@ export default function Header() {
         );
     };
     const getDrawerChoices = () => {
-        return headersData.map(({ label, href }) => {
-            return (
-                <Link
-                    {...{
-                        component: RouterLink,
-                        to: href,
-                        style: { textDecoration: "none", },
-                        key: label,
-                    }}
-                    style={{ color: '#1B1642' }}
-                >
-                    <MenuItem>{label}</MenuItem>
-                </Link>
-            );
-        });
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {headersData.map(({ label, href }) => {
+                    return (
+                        <Button
+                            {...{
+                                key: label,
+                                to: href,
+                                component: RouterLink,
+                                className: menuButton,
+                            }}
+                            style={{ color: '#1B1642' }}
+                        >
+                            {label}
+                        </Button>
+                    );
+                })}
+            </div>
+        )
     };
     const ButtonAuth = () => {
         return <Box ><ButtonCustom text="Вход" onClick={() => { dispatch({ type: 'authModal', payload: { login: true } }) }} /></Box>
     }
     const femmecubatorLogo = (
-        <div style={{ display: 'flex', flexDirection: 'row', marginRight: 15 }}>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
             <img src={'/image/Group/Group3.png'} style={{ width: 40, height: 40, cursor: 'pointer', }} alt={''} onClick={() => {
                 navigate('/')
             }} />
