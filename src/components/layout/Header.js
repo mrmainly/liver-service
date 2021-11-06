@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom'
 import { DispatchContext } from "../../store";
 import { Link } from 'react-router-dom'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     header: {
         backgroundColor: "white",
         "@media (max-width: 900px)": {
@@ -34,7 +34,13 @@ const useStyles = makeStyles(() => ({
         fontWeight: 600,
         size: "18px",
         marginLeft: "38px",
-        color: '#1B1642'
+        color: '#1B1642',
+        [theme.breakpoints.down('md')]: {
+            marginTop: 10,
+            marginLeft: 0,
+            border: '1px solid black',
+            fontSize: 12
+        },
     },
     toolbar: {
         display: "flex",
@@ -42,20 +48,27 @@ const useStyles = makeStyles(() => ({
         alignItems: 'center'
     },
     drawerContainer: {
-        padding: "20px 30px",
         color: '#1B1642',
-        height: '100%'
+        height: '100%',
+        width: 250
     },
     linkStyle: {
         textDecoration: 'none',
         color: 'black'
+    },
+    menuStyle: {
+        display: 'flex',
+        [theme.breakpoints.down('md')]: {
+            flexDirection: 'column',
+            padding: 20
+        },
     }
 }));
 
 export default function Header() {
-    const { header, menuButton, toolbar, drawerContainer, linkStyle } = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(false)
-    const [openStatus, setOpenStatus] = React.useState(false)
+    const { header, menuButton, toolbar, drawerContainer, linkStyle, menuStyle } = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null)
+    const [openStatus, setOpenStatus] = React.useState(null)
     const dispatch = useContext(DispatchContext)
     const navigate = useNavigate()
     const headersData = [
@@ -86,7 +99,7 @@ export default function Header() {
 
     useEffect(() => {
         const setResponsiveness = () => {
-            return window.innerWidth < 1180
+            return window.innerWidth < 1279
                 ? setState((prevState) => ({ ...prevState, mobileView: true }))
                 : setState((prevState) => ({ ...prevState, mobileView: false }));
         };
@@ -135,17 +148,7 @@ export default function Header() {
     const getDrawerChoices = () => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-                {headersData.map((item, index) => {
-                    return (
-                        <Button
-                            className={menuButton}
-                            onClick={() => item.type ? navigate(item.href) : setAnchorEl(true)}
-                            key={index}
-                        >
-                            {item.label}
-                        </Button>
-                    );
-                })}
+                {getMenuButtons()}
             </div>
         )
     };
@@ -160,12 +163,14 @@ export default function Header() {
     );
     const getMenuButtons = () => {
         return (
-            <div style={{ display: 'flex' }}>
+            <div className={menuStyle}>
                 {headersData.map((item, index) => {
                     return (
                         <Button
+                            aria-controls="simple-menu"
+                            aria-haspopup="true"
                             className={menuButton}
-                            onClick={() => item.href ? navigate(item.href) : item.state(true)}
+                            onClick={(e) => item.href ? navigate(item.href) : item.state(e.currentTarget)}
                             key={index}
                         >
                             {item.label}
@@ -176,8 +181,9 @@ export default function Header() {
                     id="simple-menu"
                     anchorEl={anchorEl}
                     keepMounted
-                    open={anchorEl}
+                    open={Boolean(anchorEl)}
                     onClose={() => setAnchorEl(false)}
+                    style={{ marginTop: 20 }}
                 >
                     <Link to="/sister-care" className={linkStyle}>
                         <MenuItem >Отделение сестринского ухода</MenuItem>
@@ -193,8 +199,9 @@ export default function Header() {
                     id="simple-menu"
                     anchorEl={openStatus}
                     keepMounted
-                    open={openStatus}
+                    open={Boolean(openStatus)}
                     onClose={() => setOpenStatus(false)}
+                    style={{ marginTop: 20 }}
                 >
                     <Link to="/bud-page" className={linkStyle}>
                         <MenuItem>Трансплантация почки</MenuItem>

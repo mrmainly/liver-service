@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Typography, CardMedia, CardActionArea } from '@material-ui/core'
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 const Card = ({ img, description, title, id }) => {
-    const [showElem, setShowElem] = useState(false)
     const classes = useStyles();
     const navigate = useNavigate()
 
