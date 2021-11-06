@@ -4,9 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        backgroundColor: 'white',
         width: '100%',
-        minHeight: 800,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -15,21 +13,21 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             marginTop: 120
         },
-
+        marginTop: 100,
     },
     content: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
+        padding: 40,
         [theme.breakpoints.down('sm')]: {
             flexDirection: 'column',
-            marginTop: 350,
+            padding: 15
         },
         [theme.breakpoints.down('xs')]: {
-            marginTop: 100
+            padding: 5
         },
-        padding: 20,
     },
     card: {
         marginTop: 35,
