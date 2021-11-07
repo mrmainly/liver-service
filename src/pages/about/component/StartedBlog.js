@@ -69,7 +69,7 @@ const StartedBlog = () => {
                         <Typography variant="h3">Паллиативная медицинская помощь в Якутии</Typography>
                         <Box className={classes.text_box}>
                             <Box className={classes.button_box}>
-                                <Button text={'Новости'} />
+                                <Button text={'Новости'} onClick={() => navigate('/news')} />
                                 <Button text={'Узнать подробнее'} />
                             </Box>
                         </Box>
