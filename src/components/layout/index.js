@@ -26,7 +26,6 @@ const Layout = ({ children }) => {
                 <Box className={classes.container}>
                     {children}
                 </Box>
-                <Footer />
             </StateContext.Provider>
         </DispatchContext.Provider >
     )

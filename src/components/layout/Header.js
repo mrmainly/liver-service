@@ -105,10 +105,6 @@ export default function Header() {
                     label: 'Ресурсы центр помощи семьям',
                     href: '/help-family'
                 },
-                {
-                    label: 'Наши проекты',
-                    href: '/'
-                },
             ]
         },
         {
@@ -125,7 +121,23 @@ export default function Header() {
                 },
                 {
                     label: 'Наши проекты',
-                    href: '/'
+                    status: statusThree,
+                    state: setStatusThree
+                },
+            ]
+        },
+        {
+            status: statusThree,
+            setStatus: setStatusThree,
+            style: 40,
+            menuElems: [
+                {
+                    label: 'Надежда на будущее',
+                    href: '/bud-page'
+                },
+                {
+                    label: 'Дар жизни',
+                    href: '/liver-trans'
                 },
             ]
         }
@@ -198,7 +210,6 @@ export default function Header() {
         }}>
             <img src={'/image/Group/Group3.png'} style={{ width: 40, height: 40 }} alt={''} />
             <Typography style={{ color: 'rgba(130, 27, 14, 1)', marginLeft: 5, }}>Паллиативная<br /> Помощь</Typography>
-
         </div>
     );
     const getMenuButtons = () => {
@@ -225,12 +236,23 @@ export default function Header() {
                         keepMounted
                         open={Boolean(item.status)}
                         onClose={() => item.setStatus(null)}
-                        style={{ marginTop: 20 }}
+                        style={{ marginTop: item.style ? item.style : 30 }}
                     >
                         {item.menuElems.map((item, index) => (
-                            <Link to={item.href} className={linkStyle} key={index}>
-                                <MenuItem >{item.label}</MenuItem>
-                            </Link>
+                            <Box key={index}>
+                                {item.href ?
+                                    <Link to={item.href} className={linkStyle} key={index}>
+                                        <MenuItem >{item.label}</MenuItem>
+                                    </Link>
+                                    : <MenuItem
+                                        aria-controls="simple-menu"
+                                        aria-haspopup="true"
+                                        className={linkStyle}
+                                        onClick={(e) => item.state(e.currentTarget)}
+                                    >
+                                        {item.label}
+                                    </MenuItem>}
+                            </Box>
                         ))}
                     </Menu>
                 ))}
