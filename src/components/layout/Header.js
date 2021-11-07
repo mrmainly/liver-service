@@ -67,8 +67,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Header() {
     const { header, menuButton, toolbar, drawerContainer, linkStyle, menuStyle } = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null)
-    const [openStatus, setOpenStatus] = React.useState(null)
+    const [statusThree, setStatusThree] = React.useState(null)
+    const [statusFirst, setStatusFirst] = React.useState(null)
+    const [statusSecond, setStatusSecond] = useState(null)
+
     const dispatch = useContext(DispatchContext)
     const navigate = useNavigate()
     const headersData = [
@@ -83,13 +85,51 @@ export default function Header() {
         },
         {
             label: "Паллиативная медицинская помощь",
-            state: setAnchorEl
+            state: setStatusFirst
         },
         {
             label: "Трансплантация органов",
-            state: setOpenStatus
+            state: setStatusSecond
         },
     ];
+    const menuData = [
+        {
+            status: statusFirst,
+            setStatus: setStatusFirst,
+            menuElems: [
+                {
+                    label: 'Отделение сестринского ухода',
+                    href: '/sister-care'
+                },
+                {
+                    label: 'Ресурсы центр помощи семьям',
+                    href: '/help-family'
+                },
+                {
+                    label: 'Наши проекты',
+                    href: '/'
+                },
+            ]
+        },
+        {
+            status: statusSecond,
+            setStatus: setStatusSecond,
+            menuElems: [
+                {
+                    label: 'Трансплантация почки',
+                    href: '/bud-page'
+                },
+                {
+                    label: 'Трансплантация печени',
+                    href: '/liver-trans'
+                },
+                {
+                    label: 'Наши проекты',
+                    href: '/'
+                },
+            ]
+        }
+    ]
     const [state, setState] = useState({
         mobileView: false,
         drawerOpen: false,
@@ -177,42 +217,23 @@ export default function Header() {
                         </Button>
                     );
                 })}
-                <Menu
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={() => setAnchorEl(false)}
-                    style={{ marginTop: 20 }}
-                >
-                    <Link to="/sister-care" className={linkStyle}>
-                        <MenuItem >Отделение сестринского ухода</MenuItem>
-                    </Link>
-                    <Link to="/help-family" className={linkStyle}>
-                        <MenuItem>Ресурсы центр помощи семьям</MenuItem>
-                    </Link>
-                    <Link to="/" className={linkStyle}>
-                        <MenuItem>Наши проекты</MenuItem>
-                    </Link>
-                </Menu>
-                <Menu
-                    id="simple-menu"
-                    anchorEl={openStatus}
-                    keepMounted
-                    open={Boolean(openStatus)}
-                    onClose={() => setOpenStatus(false)}
-                    style={{ marginTop: 20 }}
-                >
-                    <Link to="/bud-page" className={linkStyle}>
-                        <MenuItem>Трансплантация почки</MenuItem>
-                    </Link>
-                    <Link to="/liver-trans" className={linkStyle}>
-                        <MenuItem >Трансплантация печени</MenuItem>
-                    </Link>
-                    <Link to="/" className={linkStyle}>
-                        <MenuItem >Наши проекты</MenuItem>
-                    </Link>
-                </Menu>
+                {menuData.map((item, index) => (
+                    <Menu
+                        id="simple-menu"
+                        key={index}
+                        anchorEl={item.status}
+                        keepMounted
+                        open={Boolean(item.status)}
+                        onClose={() => item.setStatus(null)}
+                        style={{ marginTop: 20 }}
+                    >
+                        {item.menuElems.map((item, index) => (
+                            <Link to={item.href} className={linkStyle} key={index}>
+                                <MenuItem >{item.label}</MenuItem>
+                            </Link>
+                        ))}
+                    </Menu>
+                ))}
             </div>
         )
     };

@@ -18,7 +18,7 @@ const About = () => {
         <Layout>
             <StartedBlog />
             <AnswerGroup />
-            <Box style={{ marginTop: 50 }}>
+            <Box style={{ marginTop: 100 }}>
                 <Slider />
             </Box>
         </Layout>
