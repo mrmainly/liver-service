@@ -55,6 +55,14 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             marginTop: 50
         },
+        [theme.breakpoints.down('xs')]: {
+            marginTop: 0
+        },
+    },
+    title: {
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 35
+        },
     }
 }));
 
@@ -66,7 +74,7 @@ const StartedBlog = () => {
             <Container>
                 <Grid container className={classes.content}>
                     <Grid item lg={4} sm={11} md={6} xl={6} xs={11} className={classes.infoBlock}>
-                        <Typography variant="h3">Паллиативная медицинская помощь в Якутии</Typography>
+                        <Typography variant="h3" className={classes.title}>Паллиативная медицинская помощь в Якутии</Typography>
                         <Box className={classes.text_box}>
                             <Box className={classes.button_box}>
                                 <Button text={'Новости'} onClick={() => navigate('/news')} />

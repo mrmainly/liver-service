@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '1px 14px 25px rgba(0, 0, 0, 0.22)',
         borderRadius: 20,
         [theme.breakpoints.down('xs')]: {
-            marginTop: 120
+            marginTop: 40,
+            boxShadow: 'none'
         },
         marginTop: 100,
     },
@@ -49,6 +50,13 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             color: 'white'
         },
+    },
+    icon: {
+        width: 50,
+        height: 50,
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        },
     }
 }));
 
@@ -82,7 +90,7 @@ const SentenceAbout = () => {
                 <Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', }}>
                     {object.map((item, index) => (
                         <Grid item key={index} className={classes.card} lg={12} sm={12} md={12} xl={12} xs={12}>
-                            <img src={'/image/Element/Urgent-mail3.png'} style={{ width: 50, height: 50 }} alt={''} />
+                            <img src={'/image/Element/Urgent-mail3.png'} className={classes.icon} alt={''} />
                             <Box>
 
                                 {item.description}
