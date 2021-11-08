@@ -5,6 +5,9 @@ import Notification from './notification'
 import CardCustom from './card/CardCustom'
 import CardUsefulLink from './card/CardUsefulLink'
 import Slider from './slider'
+import Layout from './layout'
+import CardBlog from './card/CardBlog'
+import CardNewBlog from './card/CardNewBlog'
 
 export {
     Button,
@@ -13,5 +16,8 @@ export {
     Notification,
     CardCustom,
     CardUsefulLink,
-    Slider
+    Slider,
+    Layout,
+    CardBlog,
+    CardNewBlog
 }

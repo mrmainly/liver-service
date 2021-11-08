@@ -10,6 +10,7 @@ import Bud from './pages/bud'
 import SisterCare from './pages/sisterCare';
 import HelpFamily from './pages/helpFamily';
 import LiverTrans from './pages/liver-trans'
+import Blog from './pages/blog'
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/sister-care" element={<SisterCare />} />
         <Route path="/help-family" element={<HelpFamily />} />
         <Route path="/liver-trans" element={<LiverTrans />} />
-
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );

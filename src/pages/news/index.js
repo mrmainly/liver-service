@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../components/layout'
 import FirstBlog from './components/FirstBlog'
 import { makeStyles } from '@material-ui/core/styles'
-import TeamCardBlog from './components/TeamCardBlog'
+import NewsCardBlock from './components/NewsCardBlock'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,12 +17,7 @@ const Blog = () => {
         <Layout>
             <div className={classes.root}>
                 <FirstBlog />
-                <TeamCardBlog />
-
-                {/* <Events />
-                <AttainmentCard />
-                <MondinoCard />
-                <ArticleCards /> */}
+                <NewsCardBlock />
             </div>
         </Layout>
     )

@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap',
     },
 }));
-const Card = ({ img, description, title, id }) => {
+const Card = ({ img, description, title, id, date }) => {
     const classes = useStyles();
     const navigate = useNavigate()
 
@@ -65,6 +65,9 @@ const Card = ({ img, description, title, id }) => {
                 <Box className={classes.cardContent}>
                     <Typography variant="h6">
                         {title}
+                    </Typography>
+                    <Typography variant="body1" style={{ fontWeight: 'bold' }}>
+                        {date}
                     </Typography>
                     <Typography variant="body1">
                         {description}

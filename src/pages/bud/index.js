@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import Layout from '../../components/layout'
+import { Layout } from '../../components'
 
 const Bud = () => {
     return (
