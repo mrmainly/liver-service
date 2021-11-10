@@ -53,7 +53,7 @@ const Card = ({ img, description, title, id, date }) => {
             <CardActionArea
                 className={classes.mainBlock}
                 onClick={() => navigate(`/news-inside/${id}`,
-                    { id: id },
+                    { description: description, img: img, date: date, title: title },
                 )}
             >
                 <CardMedia

@@ -7,7 +7,7 @@ import NewsCardBlock from './components/NewsCardBlock'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-
+        marginBottom: 100
     },
 }));
 
