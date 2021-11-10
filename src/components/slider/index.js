@@ -68,7 +68,7 @@ const SliderCustom = () => {
         <Box style={{ overflow: 'hidden', }}>
             <Container>
                 <Box className={classes.titleBox}>
-                    <Typography variant="h5" >Полезные ссылки</Typography>
+                    <Typography variant="h5" >Наши партнеры</Typography>
                     <Typography variant="body1">на партнеров проекта</Typography>
                 </Box>
                 <Slider {...settings} >

@@ -90,7 +90,7 @@ const SentenceAbout = () => {
                 <Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', }}>
                     {object.map((item, index) => (
                         <Grid item key={index} className={classes.card} lg={12} sm={12} md={12} xl={12} xs={12}>
-                            <img src={'/image/Element/Urgent-mail3.png'} className={classes.icon} alt={''} />
+                            <img src={'/image/Element/icon-check.png'} className={classes.icon} alt={''} />
                             <Box>
 
                                 {item.description}

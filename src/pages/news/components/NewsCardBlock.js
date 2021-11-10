@@ -58,8 +58,7 @@ const NewsCardBlock = () => {
                     <Grid item key={index} lg={12} sm={12} md={12} xl={12} xs={12} className={classes.content}>
                         <CardCustom img={item.img} title={item.title} description={item.description} id={item.id} date={item.date} />
                     </Grid>
-                ))
-                }
+                ))}
             </Grid>
         </Container>
     )
