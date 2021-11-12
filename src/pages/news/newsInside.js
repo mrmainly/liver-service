@@ -27,9 +27,9 @@ const BlogInside = () => {
         <Layout>
             <Container className={classes.container}>
                 {/* <PageHeader description="О том, как наша команда прошла самый северный акселератор инновационных проектов." title={'“Доверяем решительным”-B8'} name="Блог" /> */}
-                {/* {Information.map((item, index) => (
+                {Information.map((item, index) => (
                     <InfoBlock key={index} text={item} />
-                ))} */}
+                ))}
             </Container>
         </Layout>
     )

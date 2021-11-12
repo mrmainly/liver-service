@@ -16,9 +16,7 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'column'
     },
     wrapperContainer: {
-        backgroundImage: `url(${"/image/Element/Elenent_fon.png"})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain',
+
     }
 }))
 

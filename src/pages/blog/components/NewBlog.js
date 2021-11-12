@@ -26,7 +26,7 @@ const NewBlog = () => {
     const settings = {
         dots: false,
         centerPadding: "0px",
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToScroll: 1,
         slidesToShow: 1,
