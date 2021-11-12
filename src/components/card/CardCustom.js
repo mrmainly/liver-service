@@ -47,14 +47,12 @@ const useStyles = makeStyles((theme) => ({
 const Card = ({ img, description, title, id, date }) => {
     const classes = useStyles();
     const navigate = useNavigate()
-
+    const newDate = new Date(date).toLocaleDateString()
     return (
         <Box className={classes.root}>
             <CardActionArea
                 className={classes.mainBlock}
-                onClick={() => navigate(`/news-inside/${id}`,
-                    { description: description, img: img, date: date, title: title },
-                )}
+                onClick={() => navigate(`/news-inside/${id}`)}
             >
                 <CardMedia
                     component="img"
@@ -67,11 +65,11 @@ const Card = ({ img, description, title, id, date }) => {
                         {title}
                     </Typography>
                     <Typography variant="body1" style={{ fontWeight: 'bold' }}>
-                        {date}
+                        {newDate}
                     </Typography>
-                    <Typography variant="body1">
-                        {description}
-                    </Typography>
+                    <div dangerouslySetInnerHTML={{ __html: description }}>
+
+                    </div>
                 </Box>
             </CardActionArea>
         </Box>
