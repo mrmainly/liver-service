@@ -20,7 +20,7 @@ const Blog = () => {
     useEffect(() => {
         API.getPosts().then((res) => {
             setNews(res.data)
-            console.log('news', res.data)
+            console.log('news', res)
         })
     }, [])
 
@@ -30,8 +30,7 @@ const Blog = () => {
                 <div className={classes.root}>
                     <FirstBlog />
                     <NewsCardBlock data={news} />
-
-                    <Pagination count={10} style={{ marginTop: 20 }} />
+                    <Pagination count={10} style={{ marginTop: 20, }} />
                 </div>
             </Container>
         </Layout>

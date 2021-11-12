@@ -13,11 +13,23 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        alignItems: 'center'
+
     },
     image: {
         width: '50%',
         objectFit: 'cover',
+    },
+    dateStyle: {
+        marginBottom: 30,
+        marginTop: 20,
+    },
+    tagStyle: {
+        textTransform: 'uppercase',
+        cursor: 'pointer',
+        color: '#7bd094',
+        '&:hover': {
+            color: "#3a8762",
+        },
     }
 }))
 
@@ -25,20 +37,21 @@ const BlogInside = () => {
     const classes = useStyles()
     const [body, setBody] = useState()
     const [title, setTitle] = useState()
-    const [img, setImg] = useState()
+    const [date, setDate] = useState()
     const params = useParams()
     useEffect(() => {
         API.getPostsDetail(params.id).then((res) => {
             console.log(res)
             setBody(res.data.body)
             setTitle(res.data.title)
-            setImg(res.data.title_image)
+            setDate(new Date(res.data.created).toLocaleDateString())
         })
     }, [])
     return (
         <Layout>
             <Container className={classes.container}>
-                <Typography variant="h4" style={{ marginBottom: 50 }}>{title}</Typography>
+                <Typography variant="h4" >{title}</Typography>
+                <Typography variant="body1" className={classes.dateStyles}>{date}//<span className={classes.tagStyle}>Социяальные новости</span></Typography>
                 <div dangerouslySetInnerHTML={{ __html: body }}>
 
                 </div>
