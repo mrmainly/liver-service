@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Typography, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Slider from 'react-slick'
 
 import { CardNewBlog } from '../../../components'
 import DataBlog from '../../../Data/BlogData'
+import API from '../../../api'
 
 const useStyles = makeStyles((theme) => ({
     box: {
@@ -32,6 +33,11 @@ const NewBlog = () => {
         slidesToShow: 1,
         variableWidth: true,
     };
+    useEffect(() => {
+        API.getPosts().then((res) => {
+            console.log(res)
+        })
+    }, [])
     return (
         <Box className={classes.box}>
             <Typography variant="h6" style={{ marginBottom: 10 }}>Новый блоги</Typography>

@@ -20,12 +20,11 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     img: {
-        width: 160,
+        width: 200,
         height: 178,
         borderRadius: 5,
         [theme.breakpoints.down('xs')]: {
             width: '100%',
-
         },
     },
     cardContent: {
