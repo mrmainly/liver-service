@@ -18,6 +18,10 @@ class API {
         let result = await api(`api/v1/posts/`).get(null)
         return result
     }
+    async getPostsDetail(id) {
+        let result = await api(`api/v1/posts/${id}`).get(null)
+        return result
+    }
 }
 
 export default new API()

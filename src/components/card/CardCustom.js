@@ -43,6 +43,11 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '-5px',
         flexWrap: 'wrap',
     },
+    title: {
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis',
+        overflow: 'hidden'
+    }
 }));
 const Card = ({ img, description, title, id, date }) => {
     const classes = useStyles();
@@ -52,7 +57,7 @@ const Card = ({ img, description, title, id, date }) => {
         <Box className={classes.root}>
             <CardActionArea
                 className={classes.mainBlock}
-                onClick={() => navigate(`/news-inside/${id}`)}
+                onClick={() => navigate(`/news-inside/${id}`, { body: description, title: title })}
             >
                 <CardMedia
                     component="img"
@@ -61,15 +66,15 @@ const Card = ({ img, description, title, id, date }) => {
                     className={classes.img}
                 />
                 <Box className={classes.cardContent}>
-                    <Typography variant="h6">
+                    <Typography variant="h6" className={classes.title}>
                         {title}
                     </Typography>
-                    <Typography variant="body1" style={{ fontWeight: 'bold' }}>
+                    <Typography variant="body1" style={{ fontWeight: 'bold', marginBottom: '-10px' }}>
                         {newDate}
                     </Typography>
-                    <div dangerouslySetInnerHTML={{ __html: description }}>
+                    <Typography variant="body2" dangerouslySetInnerHTML={{ __html: description }}>
 
-                    </div>
+                    </Typography>
                 </Box>
             </CardActionArea>
         </Box>

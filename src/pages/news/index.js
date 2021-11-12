@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import { Pagination } from '@material-ui/lab'
+import { Container } from '@material-ui/core'
 
 import API from '../../api'
 import Layout from '../../components/layout'
@@ -24,10 +26,14 @@ const Blog = () => {
 
     return (
         <Layout>
-            <div className={classes.root}>
-                <FirstBlog />
-                <NewsCardBlock data={news} />
-            </div>
+            <Container>
+                <div className={classes.root}>
+                    <FirstBlog />
+                    <NewsCardBlock data={news} />
+
+                    <Pagination count={10} style={{ marginTop: 20 }} />
+                </div>
+            </Container>
         </Layout>
     )
 }

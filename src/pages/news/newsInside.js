@@ -1,35 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 import Layout from '../../components/layout'
-import { Container } from '@material-ui/core'
+import { Container, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-import InfoBlock from './components/InfoBlock'
+import API from '../../api'
 
 const useStyles = makeStyles(() => ({
     container: {
-        marginTop: 100,
+        marginTop: 50,
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center'
+    },
+    image: {
+        width: '50%',
+        objectFit: 'cover',
     }
 }))
 
 const BlogInside = () => {
     const classes = useStyles()
-    const Information = [
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
-    ]
+    const [body, setBody] = useState()
+    const [title, setTitle] = useState()
+    const [img, setImg] = useState()
+    const params = useParams()
+    useEffect(() => {
+        API.getPostsDetail(params.id).then((res) => {
+            console.log(res)
+            setBody(res.data.body)
+            setTitle(res.data.title)
+            setImg(res.data.title_image)
+        })
+    }, [])
     return (
         <Layout>
             <Container className={classes.container}>
-                {/* <PageHeader description="О том, как наша команда прошла самый северный акселератор инновационных проектов." title={'“Доверяем решительным”-B8'} name="Блог" /> */}
-                {Information.map((item, index) => (
-                    <InfoBlock key={index} text={item} />
-                ))}
+                <Typography variant="h4" style={{ marginBottom: 50 }}>{title}</Typography>
+                <div dangerouslySetInnerHTML={{ __html: body }}>
+
+                </div>
             </Container>
         </Layout>
     )
