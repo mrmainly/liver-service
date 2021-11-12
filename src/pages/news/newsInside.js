@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import Layout from '../../components/layout'
-import { Container, Typography } from '@material-ui/core'
+import { Box, Container, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 import API from '../../api'
@@ -24,12 +24,17 @@ const useStyles = makeStyles(() => ({
         marginTop: 20,
     },
     tagStyle: {
-        textTransform: 'uppercase',
         cursor: 'pointer',
         color: '#7bd094',
         '&:hover': {
             color: "#3a8762",
         },
+    },
+    box: {
+        border: '0.5px solid gray',
+        width: '50%',
+        padding: 20,
+        marginBottom: 100
     }
 }))
 
@@ -55,6 +60,19 @@ const BlogInside = () => {
                 <div dangerouslySetInnerHTML={{ __html: body }}>
 
                 </div>
+                <Box>
+                    <Typography variant="h6">МАТЕРИАЛЫ ПО ТЕМЕ</Typography>
+                    <Box className={classes.box}>
+                        <Box >
+                            <Typography variant="body1" className={classes.tagStyle}>Мы могли бы не доводить наших пациентов до трансплантации печени</Typography>
+                            <Typography variant="body2">07.07.2021//НОВОСТИ ПРОЕКТА</Typography>
+                        </Box>
+                        <Box style={{ marginTop: 10 }}>
+                            <Typography variant="body1" className={classes.tagStyle}>Начинаем сбор заявлений на оплату авиабилетов для консультации в Федеральном центре трансплантологии</Typography>
+                            <Typography variant="body2">07.07.2021//НОВОСТИ ПРОЕКТА</Typography>
+                        </Box>
+                    </Box>
+                </Box>
             </Container>
         </Layout>
     )

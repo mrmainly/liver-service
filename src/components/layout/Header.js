@@ -209,12 +209,12 @@ export default function Header() {
         )
     };
     const femmecubatorLogo = (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', cursor: 'pointer', }} onClick={() => {
+        <MenuItem style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', cursor: 'pointer', }} onClick={() => {
             navigate('/')
         }}>
             <img src={'/image/Group/Group3.png'} style={{ width: 40, height: 40 }} alt={''} />
             <Typography style={{ color: 'rgba(130, 27, 14, 1)', marginLeft: 5, }}>Паллиативная<br /> Помощь</Typography>
-        </div>
+        </MenuItem>
     );
     const getMenuButtons = () => {
         return (
