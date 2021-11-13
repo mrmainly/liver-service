@@ -8,6 +8,7 @@ import Slider from './slider'
 import Layout from './layout'
 import CardBlog from './card/CardBlog'
 import CardNewBlog from './card/CardNewBlog'
+import Pagination from './pagination'
 
 export {
     Button,
@@ -19,5 +20,6 @@ export {
     Slider,
     Layout,
     CardBlog,
-    CardNewBlog
+    CardNewBlog,
+    Pagination
 }

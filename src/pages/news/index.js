@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Pagination } from '@material-ui/lab'
 import { Container } from '@material-ui/core'
+import { Pagination } from '@material-ui/lab'
 
 import API from '../../api'
 import Layout from '../../components/layout'
@@ -16,21 +16,37 @@ const useStyles = makeStyles((theme) => ({
 
 const Blog = () => {
     const classes = useStyles()
-    const [news, setNews] = useState()
+    const [news, setNews] = useState([])
+    const [count, setCount] = useState()
+    const [currentPage, setCurrentPage] = useState(1)
+    const [loading, setLoading] = useState(false)
+    const [quantityPage] = useState(8)
     useEffect(() => {
-        API.getPosts().then((res) => {
-            setNews(res.data)
-            console.log('news', res)
-        })
+        const getPosts = async () => {
+            API.getPosts(currentPage).then((res) => {
+                setLoading(true)
+                setNews(res.data.results)
+                setCount(res.data.count)
+                setLoading(false)
+                console.log(res)
+            })
+        }
+        getPosts()
     }, [])
+
+    const lastPostIndex = currentPage * quantityPage
+    const firstPostIndex = lastPostIndex - quantityPage
+    const currentPosts = news.slice(firstPostIndex, lastPostIndex)
+
+    let countNumber = Math.ceil(count / 8)
 
     return (
         <Layout>
             <Container>
                 <div className={classes.root}>
                     <FirstBlog />
-                    <NewsCardBlock data={news} />
-                    <Pagination count={10} style={{ marginTop: 20, }} />
+                    <NewsCardBlock data={currentPosts} />
+                    <Pagination count={countNumber} onChange={(event, value) => setCurrentPage(value)} />
                 </div>
             </Container>
         </Layout>

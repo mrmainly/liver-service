@@ -14,8 +14,8 @@ const api = (url) => {
 }
 
 class API {
-    async getPosts() {
-        let result = await api(`api/v1/posts/`).get(null)
+    async getPosts(page) {
+        let result = await api(`api/v1/posts/?page=${page}`).get(null)
         return result
     }
     async getPostsDetail(id) {
