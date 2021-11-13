@@ -57,7 +57,7 @@ const SecondBlog = () => {
             </Box>
             <Grid container className={classes.Grid} id="Content2">
                 {DataBlog.map((item, index) => (
-                    <Grid item lg={3} xl={3} sm={4} xs={10} md={3} style={{ marginTop: 20, }}>
+                    <Grid item lg={3} xl={3} sm={4} xs={10} md={3} style={{ marginTop: 20, }} key={index}>
                         <CardBlog key={index} img={item.img} title={item.title} description={item.description} id={item.id} date={item.date} />
                     </Grid>
                 ))}

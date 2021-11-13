@@ -4,6 +4,7 @@ import { Box, Grid, Typography } from '@material-ui/core'
 
 import DataBlog from '../../../Data/BlogData'
 import { CardBlog, Button } from '../../../components'
+import API from '../../../api'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 const FullListScreen = () => {
     const [change, setChange] = useState(true)
+    const [posts, setPosts] = useState([])
     const classes = useStyles()
     const added = () => {
         document.getElementById('Content').style.overflow = 'auto'
@@ -46,6 +48,15 @@ const FullListScreen = () => {
         document.getElementById('Content').style.height = '430px'
         setChange(true)
     }
+    // useEffect(() => {
+    //     const getPosts = async () => {
+    //         API.getPosts('').then((res) => {
+    //             setPosts(res.data.results)
+    //             console.log(res)
+    //         })
+    //     }
+    //     getPosts()
+    // }, [])
     return (
         <Box className={classes.root}>
             <Box className={classes.titleBox}>
@@ -56,7 +67,7 @@ const FullListScreen = () => {
             </Box>
             <Grid container className={classes.Grid} id="Content">
                 {DataBlog.map((item, index) => (
-                    <Grid item lg={3} xl={3} sm={4} xs={10} md={3} style={{ marginTop: 20, }}>
+                    <Grid item lg={3} xl={3} sm={4} xs={10} md={3} style={{ marginTop: 20, }} key={index}>
                         <CardBlog key={index} img={item.img} title={item.title} description={item.description} id={item.id} date={item.date} />
                     </Grid>
                 ))}

@@ -43,6 +43,7 @@ const BlogInside = () => {
     const [body, setBody] = useState()
     const [title, setTitle] = useState()
     const [date, setDate] = useState()
+    const [tags, setTags] = useState([])
     const params = useParams()
     useEffect(() => {
         API.getPostsDetail(params.id).then((res) => {
@@ -50,13 +51,16 @@ const BlogInside = () => {
             setBody(res.data.body)
             setTitle(res.data.title)
             setDate(new Date(res.data.created).toLocaleDateString())
+            setTags(res.data.tags)
         })
     }, [])
     return (
         <Layout>
             <Container className={classes.container}>
                 <Typography variant="h4" >{title}</Typography>
-                <Typography variant="body1" className={classes.dateStyles}>{date}//<span className={classes.tagStyle}>Социяальные новости</span></Typography>
+                {tags.map((item, index) => (
+                    <Typography key={index} variant="body1" className={classes.dateStyles}>{date}//<span className={classes.tagStyle}>{item.name}</span></Typography>
+                ))}
                 <div dangerouslySetInnerHTML={{ __html: body }}>
 
                 </div>

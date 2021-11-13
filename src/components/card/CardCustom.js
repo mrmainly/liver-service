@@ -68,11 +68,11 @@ const Card = ({ img, description, title, id, date }) => {
                     <Typography variant="h6" className={classes.title}>
                         {title}
                     </Typography>
-                    <Typography variant="body1" style={{ fontWeight: 'bold', marginBottom: '-10px' }}>
+                    <Typography variant="body1" style={{ fontWeight: 'bold' }}>
                         {newDate}
                     </Typography>
-                    <Typography variant="body2" dangerouslySetInnerHTML={{ __html: description }}>
-
+                    <Typography variant="body2">
+                        {description}
                     </Typography>
                 </Box>
             </CardActionArea>

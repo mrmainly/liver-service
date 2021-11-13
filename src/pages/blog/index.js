@@ -22,6 +22,7 @@ const useStyles = makeStyles(() => ({
 
 const Blog = () => {
     const classes = useStyles()
+
     return (
         <Box className={classes.wrapperContainer}>
             <Layout>
