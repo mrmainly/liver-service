@@ -56,7 +56,7 @@ const Card = ({ img, description, title, id, date }) => {
         <Box className={classes.root}>
             <CardActionArea
                 className={classes.mainBlock}
-                onClick={() => navigate(`/news-inside/${id}`, { body: description, title: title })}
+                onClick={() => navigate(`/news-inside/${id}`)}
             >
                 <CardMedia
                     component="img"

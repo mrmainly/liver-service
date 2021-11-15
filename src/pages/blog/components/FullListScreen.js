@@ -48,27 +48,24 @@ const FullListScreen = () => {
         document.getElementById('Content').style.height = '430px'
         setChange(true)
     }
-    // useEffect(() => {
-    //     const getPosts = async () => {
-    //         API.getPosts('').then((res) => {
-    //             setPosts(res.data.results)
-    //             console.log(res)
-    //         })
-    //     }
-    //     getPosts()
-    // }, [])
+    useEffect(() => {
+        API.getPosts('', 2).then((res) => {
+            console.log(res)
+            setPosts(res.data.results)
+        })
+    }, [])
     return (
         <Box className={classes.root}>
             <Box className={classes.titleBox}>
-                <Typography variant="h5">Все блоги</Typography>
+                <Typography variant="h5">НОВОСТИ ПРОЕКТА</Typography>
                 {change ?
                     <Button text="Покозать все" onClick={() => added()} />
                     : <Button text="Закрыть" onClick={() => remove()} />}
             </Box>
             <Grid container className={classes.Grid} id="Content">
-                {DataBlog.map((item, index) => (
+                {posts.map((item, index) => (
                     <Grid item lg={3} xl={3} sm={4} xs={10} md={3} style={{ marginTop: 20, }} key={index}>
-                        <CardBlog key={index} img={item.img} title={item.title} description={item.description} id={item.id} date={item.date} />
+                        <CardBlog key={index} img={item.title_image} title={item.title} description={item.description} id={item.id} date={item.date} />
                     </Grid>
                 ))}
             </Grid>

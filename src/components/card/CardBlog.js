@@ -7,6 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { CardActions, Button } from '@material-ui/core';
 
+import { useNavigate } from 'react-router-dom';
+
 const useStyles = makeStyles({
     root: {
         width: '90%',
@@ -14,7 +16,7 @@ const useStyles = makeStyles({
         margin: '0 auto'
     },
     media: {
-        height: 180,
+        height: 200,
     },
     title: {
         fontWeight: 'bold',
@@ -24,12 +26,12 @@ const useStyles = makeStyles({
     }
 });
 
-export default function CardCustom({ img, title, description }) {
+export default function CardCustom({ img, title, description, id }) {
     const classes = useStyles();
-
+    const navigate = useNavigate()
     return (
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea style={{ height: '100%' }} onClick={() => navigate(`/news-inside/${id}`)}>
                 <CardMedia
                     className={classes.media}
                     image={img}
