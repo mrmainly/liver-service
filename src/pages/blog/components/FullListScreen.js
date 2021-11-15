@@ -49,7 +49,7 @@ const FullListScreen = () => {
         setChange(true)
     }
     useEffect(() => {
-        API.getPosts('', 2).then((res) => {
+        API.getPosts('', 4).then((res) => {
             console.log(res)
             setPosts(res.data.results)
         })

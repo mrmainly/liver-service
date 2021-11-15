@@ -50,7 +50,7 @@ const SecondBlog = () => {
         setChange(true)
     }
     useEffect(() => {
-        API.getPosts('', 1).then((res) => {
+        API.getPosts('', 3).then((res) => {
             console.log(res)
             setPosts(res.data.results)
         })
