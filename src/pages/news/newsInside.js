@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import Layout from '../../components/layout'
 import { Box, Container, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import { useNavigate } from 'react-router-dom'
 
 import API from '../../api'
 
@@ -40,10 +41,12 @@ const useStyles = makeStyles(() => ({
 
 const BlogInside = () => {
     const classes = useStyles()
+    const navigate = useNavigate()
     const [body, setBody] = useState()
     const [title, setTitle] = useState()
     const [date, setDate] = useState()
     const [tags, setTags] = useState([])
+    const [foreign, setForeign] = useState([])
     const params = useParams()
     useEffect(() => {
         API.getPostsDetail(params.id).then((res) => {
@@ -52,6 +55,7 @@ const BlogInside = () => {
             setTitle(res.data.title)
             setDate(new Date(res.data.created).toLocaleDateString())
             setTags(res.data.tags)
+            setForeign(res.data.foreign_posts)
         })
     }, [])
     return (
@@ -67,18 +71,19 @@ const BlogInside = () => {
                 <Box>
                     <Typography variant="h6">МАТЕРИАЛЫ ПО ТЕМЕ</Typography>
                     <Box className={classes.box}>
-                        <Box >
-                            <Typography variant="body1" className={classes.tagStyle}>Мы могли бы не доводить наших пациентов до трансплантации печени</Typography>
-                            <Typography variant="body2">07.07.2021//НОВОСТИ ПРОЕКТА</Typography>
-                        </Box>
-                        <Box style={{ marginTop: 10 }}>
-                            <Typography variant="body1" className={classes.tagStyle}>Начинаем сбор заявлений на оплату авиабилетов для консультации в Федеральном центре трансплантологии</Typography>
-                            <Typography variant="body2">07.07.2021//НОВОСТИ ПРОЕКТА</Typography>
-                        </Box>
+                        {foreign.length !== 0 ? foreign.map((item, index) => (
+                            <Box key={index}>
+                                <Typography variant="body1" className={classes.tagStyle} onClick={() => {
+                                    navigate(`/news-inside/${item.id}`)
+                                    window.location.reload()
+                                }}>{item.title}</Typography>
+                                <Typography variant="body2">07.07.2021//{item.tags[0].name}</Typography>
+                            </Box>
+                        )) : 'Нету материалов'}
                     </Box>
                 </Box>
             </Container>
-        </Layout>
+        </Layout >
     )
 }
 
