@@ -14,12 +14,16 @@ const api = (url) => {
 }
 
 class API {
-    async getPosts(page, tag) {
-        let result = await api(`api/v1/posts/?page=${page}${tag ? `&tags=${tag}` : ''}&limit=10${page !== 1 ? `&offset=${page * 10 - 10}` : ''}`).get(null)
+    async getPosts(page, tag, limit = 10) {
+        let result = await api(`api/v1/posts/?page=${page}${tag ? `&tags=${tag}` : ''}&limit=${limit}${page !== 1 ? `&offset=${page * 10 - 10}` : ''}`).get(null)
         return result
     }
     async getPostsDetail(id) {
         let result = await api(`api/v1/posts/${id}`).get(null)
+        return result
+    }
+    async getTags() {
+        let result = await api(`api/v1/tags/`).get(null)
         return result
     }
 }

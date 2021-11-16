@@ -50,7 +50,6 @@ const BlogInside = () => {
     const params = useParams()
     useEffect(() => {
         API.getPostsDetail(params.id).then((res) => {
-            console.log(res)
             setBody(res.data.body)
             setTitle(res.data.title)
             setDate(new Date(res.data.created).toLocaleDateString())

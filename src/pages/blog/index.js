@@ -28,7 +28,6 @@ const Blog = () => {
             <Layout>
                 <Container className={classes.container}>
                     <FullListScreen />
-                    <SecondBlog />
                 </Container>
             </Layout>
         </Box>

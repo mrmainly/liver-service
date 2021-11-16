@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Box, Grid, Typography } from '@material-ui/core'
+import { Box, Grid, TextField, Typography, FormControl, InputLabel, MenuItem, Select } from '@material-ui/core'
 
 import DataBlog from '../../../Data/BlogData'
 import { CardBlog, Button } from '../../../components'
@@ -37,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
 const FullListScreen = () => {
     const [change, setChange] = useState(true)
     const [posts, setPosts] = useState([])
+    const [tags, setTags] = useState([])
+    let currentTag
     const classes = useStyles()
     const added = () => {
         document.getElementById('Content').style.overflow = 'auto'
@@ -49,26 +51,56 @@ const FullListScreen = () => {
         setChange(true)
     }
     useEffect(() => {
-        API.getPosts('', 4).then((res) => {
-            console.log(res)
+        const getlist = async () => {
+            API.getTags().then((res) => {
+                setTags(res.data)
+            })
+            API.getPosts('', null, 1000).then((res) => {
+                setPosts(res.data.results)
+            })
+        }
+        getlist()
+    }, [])
+    const newGetList = () => {
+        API.getPosts('', currentTag, 1000).then((res) => {
             setPosts(res.data.results)
         })
-    }, [])
+    }
     return (
-        <Box className={classes.root}>
-            <Box className={classes.titleBox}>
-                <Typography variant="h5">НОВОСТИ ПРОЕКТА</Typography>
-                {change ?
-                    <Button text="Покозать все" onClick={() => added()} />
-                    : <Button text="Закрыть" onClick={() => remove()} />}
-            </Box>
-            <Grid container className={classes.Grid} id="Content">
-                {posts.map((item, index) => (
-                    <Grid item lg={3} xl={3} sm={4} xs={10} md={3} style={{ marginTop: 20, }} key={index}>
-                        <CardBlog key={index} img={item.title_image} title={item.title} description={item.description} id={item.id} date={item.date} />
+        <Box>
+            <FormControl style={{ width: 200 }}>
+                <InputLabel id="demo-simple-select-label">Фильтр по тегам</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={currentTag || ''}
+                    onChange={(e) => {
+                        currentTag = e.target.value
+                        newGetList()
+                    }}
+                >
+                    {tags.map((res, index) => (
+                        <MenuItem key={index} value={res.id}>{res.name}</MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
+            {
+                <Box className={classes.root}>
+                    <Box className={classes.titleBox}>
+                        <Typography variant="h5">Все новости</Typography>
+                        {change ?
+                            <Button text="Покозать все" onClick={() => added()} />
+                            : <Button text="Закрыть" onClick={() => remove()} />}
+                    </Box>
+                    <Grid container className={classes.Grid} id="Content">
+                        {posts.map((item, index) => (
+                            <Grid item lg={3} xl={3} sm={4} xs={10} md={3} style={{ marginTop: 20, }} key={index}>
+                                <CardBlog key={index} img={item.title_image} title={item.title} description={item.description} id={item.id} date={item.date} />
+                            </Grid>
+                        ))}
                     </Grid>
-                ))}
-            </Grid>
+                </Box>
+            }
         </Box>
     )
 }

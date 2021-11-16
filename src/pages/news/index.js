@@ -20,12 +20,12 @@ const Blog = () => {
     const [count, setCount] = useState()
     const [currentPage, setCurrentPage] = useState(1)
     const [loading, setLoading] = useState(false)
+    const [offset, setOffset] = useState()
     useEffect(() => {
         const getPosts = async () => {
-            API.getPosts(currentPage).then((res) => {
+            API.getPosts(currentPage, offset).then((res) => {
                 setNews(res.data.results)
                 setCount(res.data.count)
-                console.log(res)
             })
         }
         getPosts()
