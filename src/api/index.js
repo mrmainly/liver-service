@@ -15,7 +15,7 @@ const api = (url) => {
 
 class API {
     async getPosts(page, tag) {
-        let result = await api(`api/v1/posts/?page=${page}${tag ? `&tags=${tag}` : ''}`).get(null)
+        let result = await api(`api/v1/posts/?page=${page}${tag ? `&tags=${tag}` : ''}&limit=10${page !== 1 ? `&offset=${page * 10 - 10}` : ''}`).get(null)
         return result
     }
     async getPostsDetail(id) {
