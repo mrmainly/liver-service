@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 import Layout from '../../components/layout'
-import { Box, Container, Typography } from '@material-ui/core'
+import { Box, Container, Typography, CircularProgress } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { useNavigate } from 'react-router-dom'
 
@@ -47,6 +47,7 @@ const BlogInside = () => {
     const [date, setDate] = useState()
     const [tags, setTags] = useState([])
     const [foreign, setForeign] = useState([])
+    const [loading, setLoading] = useState(true)
     const params = useParams()
     useEffect(() => {
         API.getPostsDetail(params.id).then((res) => {
@@ -55,11 +56,13 @@ const BlogInside = () => {
             setDate(new Date(res.data.created).toLocaleDateString())
             setTags(res.data.tags)
             setForeign(res.data.foreign_posts)
+            setLoading(false)
         })
     }, [])
     return (
         <Layout>
             <Container className={classes.container}>
+                {loading && <CircularProgress style={{ marginTop: 50 }} />}
                 <Typography variant="h4" >{title}</Typography>
                 {tags.map((item, index) => (
                     <Typography key={index} variant="body1" className={classes.dateStyles}>{date}//<span className={classes.tagStyle}>{item.name}</span></Typography>

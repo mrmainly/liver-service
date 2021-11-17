@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color: "#3a8762",
         },
+        width: 'max-content'
     }
 }));
 const Card = ({ img, description, title, id, date, tag }) => {
@@ -77,9 +78,7 @@ const Card = ({ img, description, title, id, date, tag }) => {
                     <Typography variant="body1" style={{ fontWeight: 'bold' }}>
                         {newDate}
                     </Typography>
-
                     {tag.map((item, index) => <Typography key={index} variant="body2" className={classes.tag}>{item.name}</Typography>)}
-
                     <Typography variant="body2">
                         {description}
                     </Typography>
