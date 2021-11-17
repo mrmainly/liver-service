@@ -46,9 +46,15 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
         overflow: 'hidden'
+    },
+    tag: {
+        color: '#7bd094',
+        '&:hover': {
+            color: "#3a8762",
+        },
     }
 }));
-const Card = ({ img, description, title, id, date }) => {
+const Card = ({ img, description, title, id, date, tag }) => {
     const classes = useStyles();
     const navigate = useNavigate()
     const newDate = new Date(date).toLocaleDateString()
@@ -71,6 +77,9 @@ const Card = ({ img, description, title, id, date }) => {
                     <Typography variant="body1" style={{ fontWeight: 'bold' }}>
                         {newDate}
                     </Typography>
+
+                    {tag.map((item, index) => <Typography key={index} variant="body2" className={classes.tag}>{item.name}</Typography>)}
+
                     <Typography variant="body2">
                         {description}
                     </Typography>
