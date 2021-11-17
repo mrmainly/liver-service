@@ -34,7 +34,7 @@ const useStyles = makeStyles(() => ({
     box: {
         border: '0.5px solid gray',
         width: '50%',
-        padding: 20,
+        padding: '10px 20px 20px 20px',
         marginBottom: 100
     }
 }))
@@ -74,7 +74,7 @@ const BlogInside = () => {
                     <Typography variant="h6">МАТЕРИАЛЫ ПО ТЕМЕ</Typography>
                     <Box className={classes.box}>
                         {foreign.length !== 0 ? foreign.map((item, index) => (
-                            <Box key={index}>
+                            <Box key={index} style={{ marginTop: 10 }}>
                                 <Typography variant="body1" className={classes.tagStyle} onClick={() => {
                                     navigate(`/news-inside/${item.id}`)
                                     window.location.reload()
