@@ -88,10 +88,6 @@ export default function Header() {
             href: '/our-projects'
         },
         {
-            label: "Школа домашнего ухода",
-            href: '/our-projects'
-        },
-        {
             label: "Паллиативная медицинская помощь",
             state: setStatusFirst
         },
