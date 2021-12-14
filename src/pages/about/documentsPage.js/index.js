@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import Layout from '../../components/layout'
+import { Layout } from '../../../components'
 
-const SisterCare = () => {
+const DocumentPage = () => {
     return (
         <Layout>
             <Container>
@@ -13,4 +13,4 @@ const SisterCare = () => {
     )
 }
 
-export default SisterCare
+export default DocumentPage

@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     }
 });
 
-export default function CardCustom({ img, title, description, id }) {
+export default function CardCustom({ img, title, description, id, tag }) {
     const classes = useStyles();
     const navigate = useNavigate()
     return (

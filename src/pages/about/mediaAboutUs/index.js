@@ -1,9 +1,8 @@
 import React from 'react'
-import Layout from '../../components/layout'
 import StartedBlog from './component/StartedBlog'
 import AnswerGroup from './component/AnswerGroup'
 import { makeStyles } from '@material-ui/core/styles';
-import { Slider } from '../../components'
+import { Slider, Layout } from '../../../components'
 
 import { Box } from '@material-ui/core'
 
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const About = () => {
+const MediaAboutUs = () => {
     const classes = useStyles()
     return (
         <Layout>
@@ -25,4 +24,4 @@ const About = () => {
     )
 }
 
-export default About
+export default MediaAboutUs

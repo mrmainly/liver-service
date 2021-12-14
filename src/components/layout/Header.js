@@ -70,33 +70,76 @@ export default function Header() {
     const [statusThree, setStatusThree] = React.useState(null)
     const [statusFirst, setStatusFirst] = React.useState(null)
     const [statusSecond, setStatusSecond] = useState(null)
+    const [statusFour, setStatusFour] = useState(null)
 
     const dispatch = useContext(DispatchContext)
     const navigate = useNavigate()
     const headersData = [
         {
-            label: "О нас",
-            href: "/",
-
-        },
-        {
             label: "Новости",
             href: "/news",
         },
         {
-            label: "Блог",
-            href: "/blog",
+            label: "О нас",
+            state: setStatusFour
+        },
+        {
+            label: "Наши проекты",
+            href: '/our-projects'
+        },
+        {
+            label: "Школа домашнего ухода",
+            href: '/our-projects'
         },
         {
             label: "Паллиативная медицинская помощь",
             state: setStatusFirst
         },
+        // {
+        //     label: "Трансплантация органов",
+        //     state: setStatusSecond
+        // },
+
         {
-            label: "Трансплантация органов",
-            state: setStatusSecond
+            label: "Волонтерам",
+            href: '/valunteers'
+        },
+        {
+            label: "Помочь",
+            href: '/help'
         },
     ];
     const menuData = [
+        {
+            status: statusFour,
+            setStatus: setStatusFour,
+            menuElems: [
+                {
+                    label: 'Документы',
+                    href: '/documents-page'
+                },
+                {
+                    label: 'Команда',
+                    href: '/team'
+                },
+                {
+                    label: 'Отчеты',
+                    href: '/reports'
+                },
+                {
+                    label: 'СМИ о нас',
+                    href: '/'
+                },
+                {
+                    label: 'Контакты',
+                    href: '/contacts'
+                },
+                {
+                    label: 'Вакансии',
+                    href: '/vacancy'
+                }
+            ]
+        },
         {
             status: statusFirst,
             setStatus: setStatusFirst,
@@ -106,9 +149,13 @@ export default function Header() {
                     href: '/sister-care'
                 },
                 {
-                    label: 'Ресурсы центр помощи семьям',
-                    href: '/help-family'
+                    label: 'Проект "На связи"',
+                    href: '/project-in-touch'
                 },
+                {
+                    label: 'Новости отделения',
+                    href: '/project-news'
+                }
             ]
         },
         {
@@ -155,7 +202,7 @@ export default function Header() {
 
     useEffect(() => {
         const setResponsiveness = () => {
-            return window.innerWidth < 1279
+            return window.innerWidth < 1555
                 ? setState((prevState) => ({ ...prevState, mobileView: true }))
                 : setState((prevState) => ({ ...prevState, mobileView: false }));
         };

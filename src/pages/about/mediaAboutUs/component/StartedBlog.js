@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Typography, Box, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { Button } from '../../../components'
+import { Button } from '../../../../components'
 
 import { useNavigate } from 'react-router-dom'
 
