@@ -12,6 +12,7 @@ import Pagination from './pagination'
 import CardTeam from './card/CardTeam'
 import { PageHeader } from './PageHeader'
 import MenuOurProject from './menu/MenuOurProject'
+import CardCommon from './card/CardCommon'
 
 export {
     Button,
@@ -27,5 +28,6 @@ export {
     Pagination,
     CardTeam,
     PageHeader,
-    MenuOurProject
+    MenuOurProject,
+    CardCommon
 }

@@ -12,7 +12,6 @@ const useStyles = makeStyles(() => ({
         width: 400,
     },
     container: {
-        paddingTop: 50,
         display: 'flex',
         justifyContent: 'end'
     },
