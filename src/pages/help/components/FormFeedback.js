@@ -1,10 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Box, Typography, TextField } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 import { Form, Input, Button } from '../../../components'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     box: {
         marginTop: 50,
         display: 'flex',
@@ -15,16 +15,16 @@ const useStyles = makeStyles(() => ({
     title: {
         fontSize: 30
     },
-    description: {
-
-    },
     titleBox: {
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
         width: '50%',
-        textAlign: 'center'
+        textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        },
     },
     line: {
         width: 100,
@@ -36,7 +36,10 @@ const useStyles = makeStyles(() => ({
         width: '50%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        [theme.breakpoints.down('sm')]: {
+            width: '100%'
+        },
     }
 }))
 
