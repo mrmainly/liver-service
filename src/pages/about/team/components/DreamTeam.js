@@ -26,32 +26,32 @@ const DreamTeam = () => {
     const object = [
         {
             img: '/image/Rectangle87.png',
-            title: 'Титов Михаил',
+            title: 'anton',
             description: 'Founder, CVO'
         },
         {
             img: '/image/Rectangle87.png',
-            title: 'Белостоцкий-Капгер Авигдор',
+            title: 'anton',
             description: 'CEO, team lead'
         },
         {
             img: '/image/Rectangle87.png',
-            title: 'Айталина Лукавина',
+            title: 'anton',
             description: 'Project manager, marketer'
         },
         {
             img: '/image/Rectangle87.png',
-            title: 'Виктор Павлов',
+            title: 'anton',
             description: 'CTO, Full stack developer'
         },
         {
             img: '/image/Rectangle87.png',
-            title: 'Виктория Стасюлевич',
+            title: 'anton',
             description: 'Chief Design Officer'
         },
         {
             img: '/image/Rectangle87.png',
-            title: 'Ульяна Семенова',
+            title: 'anton',
             description: 'SEO, SMM'
         },
     ]
@@ -67,8 +67,7 @@ const DreamTeam = () => {
                     <Grid item key={index} lg={3} sm={6} md={4} xl={3} xs={12}>
                         <CardTeam img={item.img} title={item.title} description={item.description} />
                     </Grid>
-                ))
-                }
+                ))}
             </Grid>
         </Container>
     )

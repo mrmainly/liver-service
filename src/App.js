@@ -75,10 +75,10 @@ function App() {
         <Route path="/school/complication" element={<Complication />} />
         <Route path="/school/featuresOfCare" element={<FeaturesOfCare />} />
         <Route path="/school/psychologicalAspects" element={<PsychologicalAspects />} />
-        <Route path="/school/helpPalliative" element={<HelpPalliative />} />
-        <Route path="/school/dementiaNo" element={<DementiaNo />} />
-        <Route path="/school/donation" element={<Donation />} />
-        <Route path="/school/seriouslyIllFamily" element={<SeriouslyIllFamily />} />
+        <Route path="/helpPalliative" element={<HelpPalliative />} />
+        <Route path="/dementiaNo" element={<DementiaNo />} />
+        <Route path="/donation" element={<Donation />} />
+        <Route path="/seriouslyIllFamily" element={<SeriouslyIllFamily />} />
 
       </Routes>
     </BrowserRouter>

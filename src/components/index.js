@@ -11,6 +11,7 @@ import CardNewBlog from './card/CardNewBlog'
 import Pagination from './pagination'
 import CardTeam from './card/CardTeam'
 import { PageHeader } from './PageHeader'
+import MenuOurProject from './menu/MenuOurProject'
 
 export {
     Button,
@@ -25,5 +26,6 @@ export {
     CardNewBlog,
     Pagination,
     CardTeam,
-    PageHeader
+    PageHeader,
+    MenuOurProject
 }
