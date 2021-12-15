@@ -4,7 +4,7 @@ import { Container, CircularProgress } from '@material-ui/core'
 import { Pagination } from '@material-ui/lab'
 
 import API from '../../api'
-import Layout from '../../components/layout'
+import { Layout, PageHeader } from '../../components'
 import FirstBlog from './components/FirstBlog'
 import NewsCardBlock from './components/NewsCardBlock'
 
@@ -43,7 +43,7 @@ const Blog = () => {
         <Layout>
             <Container>
                 <div className={classes.root}>
-                    <FirstBlog />
+                    <PageHeader title="Новости" description='это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.' />
                     {loading && <CircularProgress style={{ marginTop: 50 }} />}
                     <NewsCardBlock data={news} />
                     <Pagination count={countNumber} onChange={(event, value) => setCurrentPage(value)} />

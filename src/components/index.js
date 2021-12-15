@@ -1,7 +1,7 @@
-import Button from './button'
-import { Input } from './input'
-import { Form } from './form'
-import Notification from './notification'
+import Button from './UI/button'
+import { Input } from './UI/input'
+import { Form } from './UI/form'
+import Notification from './UI/notification'
 import CardCustom from './card/CardCustom'
 import CardUsefulLink from './card/CardUsefulLink'
 import Slider from './slider'
@@ -9,6 +9,8 @@ import Layout from './layout'
 import CardBlog from './card/CardBlog'
 import CardNewBlog from './card/CardNewBlog'
 import Pagination from './pagination'
+import CardTeam from './card/CardTeam'
+import { PageHeader } from './PageHeader'
 
 export {
     Button,
@@ -21,5 +23,7 @@ export {
     Layout,
     CardBlog,
     CardNewBlog,
-    Pagination
+    Pagination,
+    CardTeam,
+    PageHeader
 }

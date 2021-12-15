@@ -1,13 +1,20 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import { Layout } from '../../components'
+import { makeStyles } from '@material-ui/core/styles';
+
+import { Layout, PageHeader } from '../../components'
+import FaqScreen from './components/FaqScreen';
+import FormFeedBack from './components/FormFeedback'
 
 const Help = () => {
     return (
         <Layout>
             <Container>
-                asd
+                <PageHeader title="Помощь" description='это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.' />
+                <FaqScreen />
+
+                <FormFeedBack />
             </Container>
         </Layout>
     )
