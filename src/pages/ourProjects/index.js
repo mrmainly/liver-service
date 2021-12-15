@@ -6,19 +6,11 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Layout, MenuOurProject } from '../../components'
 
 const useStyles = makeStyles(() => ({
-    menu: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: 400,
-    },
     container: {
         display: 'flex',
-        justifyContent: 'end'
+        justifyContent: 'end',
+        marginTop: 20
     },
-    menu_link: {
-        textDecoration: 'none',
-        color: 'black',
-    }
 }))
 
 const OurProjects = () => {
