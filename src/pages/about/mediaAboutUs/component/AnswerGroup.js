@@ -2,41 +2,21 @@ import React from 'react'
 import { Container, Box, Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 
+import { PageHeader } from '../../../../components'
+
 const useStyles = makeStyles((theme) => ({
     container: {
-        width: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        boxShadow: '1px 14px 25px rgba(0, 0, 0, 0.22)',
-        borderRadius: 20,
-        [theme.breakpoints.down('xs')]: {
-            marginTop: 40,
-            boxShadow: 'none'
-        },
         marginTop: 100,
-    },
-    content: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        padding: 40,
-        [theme.breakpoints.down('sm')]: {
-            flexDirection: 'column',
-            padding: 15
-        },
-        [theme.breakpoints.down('xs')]: {
-            padding: 5
-        },
+        flexDirection: 'column'
     },
     card: {
         marginTop: 35,
-        marginLeft: 15,
-        marginRight: 15,
-        display: 'flex',
-        flexDirection: 'row',
-
+        border: '3px solid #51A5D5',
+        borderRadius: 15,
+        padding: 20
     },
     title: {
         marginBottom: 30,
@@ -64,10 +44,6 @@ const SentenceAbout = () => {
     const classes = useStyles()
     const object = [
         {
-            title: 'Безопасно',
-            description: 'Если вы просматриваете наш сайт, наверняка уже знакомы с темой трансплантации органов. Наша команда —  это пациенты с донорскими органами, и люди, которые ждут трансплантацию органов, близкие родственники, друзья, а также врачи нефрологи, инфекционисты, трансплантологи, хирурги и терапевты — все, которые спасают жизни и поддерживают людей на диализе и после трансплантации органов.',
-        },
-        {
             title: 'Выгодно',
             description: 'С 2014 года мы реализуем проект «Надежда на будущее». Этот проект осуществляется в благодарность нашим Донорам, которые пожертвовали частичку себя для того, чтобы мы могли жить полноценной жизнью. Мы радуемся каждому дню, которого не было бы, если бы не наши Доноры.',
         },
@@ -83,22 +59,14 @@ const SentenceAbout = () => {
 
     return (
         <Container className={classes.container}>
-            <Box container className={classes.content}>
-                <Box>
-                    <Typography variant="h3" className={classes.title}>О проекте</Typography>
-                </Box>
-                <Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', }}>
-                    {object.map((item, index) => (
-                        <Grid item key={index} className={classes.card} lg={12} sm={12} md={12} xl={12} xs={12}>
-                            <img src={'/image/Element/icon-check.png'} className={classes.icon} alt={''} />
-                            <Box>
-
-                                {item.description}
-                            </Box>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
+            <PageHeader title="О преокте" />
+            <Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', }}>
+                {object.map((item, index) => (
+                    <Grid item key={index} className={classes.card} lg={12} sm={12} md={12} xl={12} xs={12}>
+                        <Typography variant="h6">{item.description}</Typography>
+                    </Grid>
+                ))}
+            </Grid>
         </Container>
     )
 }

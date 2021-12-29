@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     btn: {
-        color: 'black',
+        color: 'white',
         border: 0,
         height: 48,
         padding: '0 20px',
@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
         },
         fontSize: 14,
         marginLeft: 12,
-        background: 'white'
+        background: '#4F99FF',
+        borderRadius: '0px 12px'
     }
 }));
 

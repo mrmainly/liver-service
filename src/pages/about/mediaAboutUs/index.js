@@ -17,7 +17,7 @@ const MediaAboutUs = () => {
         <Layout>
             <StartedBlog />
             <AnswerGroup />
-            <Box style={{ marginTop: 100 }}>
+            <Box style={{ marginTop: 100, marginBottom: 100 }}>
                 <Slider />
             </Box>
         </Layout>

@@ -6,10 +6,7 @@ import { ExtraLargeHeader } from "./ExtraLargeHeader";
 
 const useStyles = makeStyles({
     container: {
-        maxWidth: 800,
         margin: 'auto',
-        marginTop: 80,
-        marginBottom: 80
     },
     description: {
         margin: '16px 0px',
@@ -17,11 +14,11 @@ const useStyles = makeStyles({
     }
 });
 
-export const PageHeader = ({ title, description }) => {
+export const PageHeader = ({ title, description, ...props }) => {
     const classes = useStyles()
 
     return (
-        <Box className={classes.container} >
+        <Box className={classes.container} {...props}>
             <ExtraLargeHeader>{title}</ExtraLargeHeader>
             <Typography variant="body1" className={classes.description}>{description}</Typography>
         </Box>
