@@ -29,5 +29,5 @@ export {
     CardTeam,
     PageHeader,
     MenuOurProject,
-    CardCommon
+    CardCommon,
 }
