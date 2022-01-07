@@ -25,7 +25,7 @@ const Palliative = () => {
     return (
         <Layout>
             <MyContainer style={{ marginTop: 100, marginBottom: 100 }} wrapper={true} >
-                <PageHeader title="Паллиативная медицинская помощь" />
+                <PageHeader title="Паллиативная медицинская помощь" fontSize={35} />
                 {text.map((item, index) => (
                     <Typography variant="h6" key={index} className={classes.Text}>{item}</Typography>
                 ))}

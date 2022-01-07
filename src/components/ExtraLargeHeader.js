@@ -32,12 +32,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export const ExtraLargeHeader = ({ children }) => {
+export const ExtraLargeHeader = ({ children, fontSize }) => {
     const classes = useStyles()
     return (
         <Box className={classes.textBox}>
             <Box className={classes.line}></Box>
-            <Typography className={classes.text}>{children}</Typography>
+            <Typography className={classes.text} style={{ fontSize: fontSize }}>{children}</Typography>
             <Box className={classes.line}></Box>
         </Box>
     );

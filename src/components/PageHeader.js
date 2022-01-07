@@ -20,12 +20,12 @@ const useStyles = makeStyles({
     }
 });
 
-export const PageHeader = ({ title, description, ...props }) => {
+export const PageHeader = ({ title, description, fontSize, ...props }) => {
     const classes = useStyles()
 
     return (
         <Box className={classes.container} {...props}>
-            <ExtraLargeHeader>{title}</ExtraLargeHeader>
+            <ExtraLargeHeader fontSize={fontSize ? fontSize : ''}>{title}</ExtraLargeHeader>
             <Typography variant="body1" className={classes.description}>{description}</Typography>
         </Box>
     );
