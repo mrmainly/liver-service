@@ -111,6 +111,10 @@ export default function Header() {
             setStatus: setStatusFour,
             menuElems: [
                 {
+                    label: 'О нас',
+                    href: '/about'
+                },
+                {
                     label: 'Документы',
                     href: '/documents-page'
                 },
@@ -140,6 +144,10 @@ export default function Header() {
             status: statusFirst,
             setStatus: setStatusFirst,
             menuElems: [
+                {
+                    label: 'Паллиативная медицинская помощь',
+                    href: '/palliative'
+                },
                 {
                     label: 'Отделение сестринского ухода',
                     href: '/sister-care'

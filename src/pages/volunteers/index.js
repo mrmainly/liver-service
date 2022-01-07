@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container } from '@material-ui/core'
+import { Container, Box } from '@material-ui/core'
 
 import DataVolunteers from '../../Data/DataVolunteers'
 import { Layout, PageHeader } from '../../components'
@@ -10,8 +10,10 @@ const Valunteers = () => {
     return (
         <Layout>
             <Container>
-                <PageHeader title="Волонтерам" description='это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.' />
-                <CommonCardConstructor data={DataVolunteers} />
+                <Box style={{ marginTop: 100, marginBottom: 100 }}>
+                    <PageHeader title="Волонтерам" description='это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.' />
+                    <CommonCardConstructor data={DataVolunteers} />
+                </Box>
             </Container>
         </Layout>
     )

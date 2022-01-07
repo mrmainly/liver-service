@@ -7,10 +7,16 @@ import { ExtraLargeHeader } from "./ExtraLargeHeader";
 const useStyles = makeStyles({
     container: {
         margin: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        marginBottom: 50
     },
     description: {
         margin: '16px 0px',
-        textAlign: 'center'
+        textAlign: 'center',
+        width: '50%'
     }
 });
 

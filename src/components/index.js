@@ -1,7 +1,7 @@
 import Button from './UI/button'
 import { Input } from './UI/input'
 import { Form } from './UI/form'
-import Notification from './UI/notification'
+import Notification from './notification'
 import CardCustom from './card/CardCustom'
 import CardUsefulLink from './card/CardUsefulLink'
 import Slider from './slider'
@@ -13,6 +13,7 @@ import CardTeam from './card/CardTeam'
 import { PageHeader } from './PageHeader'
 import MenuOurProject from './menu/MenuOurProject'
 import CardCommon from './card/CardCommon'
+import MyContainer from './container'
 
 export {
     Button,
@@ -30,4 +31,5 @@ export {
     PageHeader,
     MenuOurProject,
     CardCommon,
+    MyContainer
 }

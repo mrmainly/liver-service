@@ -2,27 +2,28 @@ import './App.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import MediaAboutUs from './pages/about/mediaAboutUs'
 import News from './pages/news'
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import NewsInside from './pages/news/newsInside'
 import Bud from './pages/bud'
 import HelpFamily from './pages/helpFamily';
 import LiverTrans from './pages/liver-trans'
-import Blog from './pages/blog'
 import Help from './pages/help'
 import Valunteers from './pages/volunteers'
 import OurProjects from './pages/ourProjects';
 
-import DocumentsPage from './pages/about/documentsPage.js'
-import Vacancy from './pages/about/vacancy'
-import Contacts from './pages/about/contacts'
-import Reports from './pages/about/reports'
-import Team from './pages/about/team'
+import MediaAboutUs from './pages/aboutDropdown/mediaAboutUs'
+import DocumentsPage from './pages/aboutDropdown/documentsPage'
+import Vacancy from './pages/aboutDropdown/vacancy'
+import Contacts from './pages/aboutDropdown/contacts'
+import Reports from './pages/aboutDropdown/reports'
+import Team from './pages/aboutDropdown/team'
+import About from './pages/aboutDropdown/about'
 
-import ProjectInTouch from './pages/palliative/projectInTouch'
-import ProjectNews from './pages/palliative/projectNews'
-import SisterCare from './pages/palliative/sisterCare';
+import ProjectInTouch from './pages/palliativeDropdown/projectInTouch'
+import ProjectNews from './pages/palliativeDropdown/projectNews'
+import SisterCare from './pages/palliativeDropdown/sisterCare'
+import Palliative from './pages/palliativeDropdown/palliative'
 
 import Stroke from './pages/ourProjects/stroke'
 import Dementia from './pages/ourProjects/dementia'
@@ -59,10 +60,12 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/team" element={<Team />} />
+        <Route path="/about" element={<About />} />
 
         <Route path="/project-in-touch" element={<ProjectInTouch />} />
         <Route path="/project-news" element={<ProjectNews />} />
         <Route path="/sister-care" element={<SisterCare />} />
+        <Route path="/palliative" element={<Palliative />} />
 
         <Route path="/school/stroke" element={<Stroke />} />
         <Route path="/school/dementia" element={<Dementia />} />

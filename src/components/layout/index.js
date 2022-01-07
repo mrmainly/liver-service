@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from './Header'
-import Notification from '../UI/notification'
 import { stateReducer } from '../../reducer'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -24,7 +23,6 @@ const Layout = ({ children }) => {
         <DispatchContext.Provider value={dispatch}>
             <StateContext.Provider value={state}>
                 <Header />
-                <Notification />
                 <Box className={classes.container}>
                     {children}
                 </Box>
