@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const testURL = 'http://127.0.0.1:8000/'
-const publicURL = 'http://proekt-hope.ru/'
+const publicURL = 'http://liver.mondino.tech/'
 
 const api = (url) => {
     const instance = axios.create({
