@@ -59,7 +59,7 @@ const SentenceAbout = () => {
 
     return (
         <Container className={classes.container}>
-            <PageHeader title="О преокте" />
+            <PageHeader title="О проекте" />
             <Grid container style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', }}>
                 {object.map((item, index) => (
                     <Grid item key={index} className={classes.card} lg={12} sm={12} md={12} xl={12} xs={12}>

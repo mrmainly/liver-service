@@ -31,7 +31,7 @@ const Palliative = () => {
                 ))}
                 <Typography variant="h6" className={classes.Text}>
                     Сегодня в Республике Саха (Якутия) утверждена региональная программа (ссылка<span><a target="_blank" href="https://docs.cntd.ru/document/570740665">https://docs.cntd.ru/document/570740665</a></span>) развития системы оказания паллиативной медицинской помощи.
-                </Typography>
+                </Typography>$
 
                 <Typography variant="h6" className={classes.Text}>
                     Основными операторами оказания паллиативной медицинской помощи в регионе являются:

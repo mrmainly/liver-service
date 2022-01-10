@@ -9,7 +9,8 @@ import {
     Drawer,
     Menu,
     MenuItem,
-    Box
+    Box,
+    Container
 } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useNavigate } from 'react-router-dom'
@@ -44,8 +45,8 @@ const useStyles = makeStyles((theme) => ({
     },
     toolbar: {
         display: "flex",
-        justifyContent: 'center',
-        alignItems: 'center'
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     drawerContainer: {
         color: '#1B1642',
@@ -76,34 +77,34 @@ export default function Header() {
     const navigate = useNavigate()
     const headersData = [
         {
-            label: "Новости",
-            href: "/news",
-        },
-        {
             label: "О нас",
             state: setStatusFour
         },
         {
-            label: "Наши проекты",
-            href: '/our-projects'
-        },
-        {
-            label: "Паллиативная медицинская помощь",
-            state: setStatusFirst
+            label: "Новости",
+            href: "/news",
         },
         // {
-        //     label: "Трансплантация органов",
-        //     state: setStatusSecond
+        //     label: "Наши проекты",
+        //     href: ''
         // },
+        {
+            label: "Паллиативная помощь",
+            state: setStatusFirst
+        },
+        {
+            label: "Трансплантация органов",
+            state: setStatusSecond
+        },
 
-        {
-            label: "Волонтерам",
-            href: '/valunteers'
-        },
-        {
-            label: "Помочь",
-            href: '/help'
-        },
+        // {
+        //     label: "Волонтерам",
+        //     href: '/valunteers'
+        // },
+        // {
+        //     label: "Помочь",
+        //     href: '/help'
+        // },
     ];
     const menuData = [
         {
@@ -186,12 +187,32 @@ export default function Header() {
             setStatus: setStatusThree,
             style: 40,
             menuElems: [
+                // {
+                //     label: 'Надежда на будущее',
+                //     href: '/bud-page'
+                // },
+                // {
+                //     label: 'Дар жизни',
+                //     href: '/liver-trans'
+                // },
                 {
-                    label: 'Надежда на будущее',
-                    href: '/bud-page'
+                    label: 'Проект "Школа домашнего ухода"',
+                    href: '/liver-trans'
                 },
                 {
-                    label: 'Дар жизни',
+                    label: 'Проект по респисной помощи семьям с тяжелобольными пациентами',
+                    href: '/liver-trans'
+                },
+                {
+                    label: 'Ресурсный центр поддержки семей с паллиативными пациентами',
+                    href: '/liver-trans'
+                },
+                {
+                    label: 'Проект "Деменции нет"',
+                    href: '/liver-trans'
+                },
+                {
+                    label: 'Спецпроекты по донорству',
                     href: '/liver-trans'
                 },
             ]
@@ -215,9 +236,12 @@ export default function Header() {
     }, []);
     const displayDesktop = () => {
         return (
-            <Toolbar className={toolbar}>
-                {femmecubatorLogo}
-                <div>{getMenuButtons()}</div>
+
+            <Toolbar>
+                <Container className={toolbar}>
+                    {femmecubatorLogo}
+                    <div>{getMenuButtons()}</div>
+                </Container>
             </Toolbar>
         );
     };
@@ -263,8 +287,8 @@ export default function Header() {
         <MenuItem style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', cursor: 'pointer', }} onClick={() => {
             navigate('/')
         }}>
-            <img src={'/image/image1.png'} style={{ width: 40, height: 40 }} alt={''} />
-            <Typography style={{ color: 'rgba(130, 27, 14, 1)', marginLeft: 5, }}>Паллиативная<br /> Помощь</Typography>
+            <img src={'/image/Group15.png'} style={{ width: 40, height: 40 }} alt={''} />
+            <Typography style={{ marginLeft: 5, color: 'black' }}>Паллиативная<br /> Помощь</Typography>
         </MenuItem>
     );
     const getMenuButtons = () => {
