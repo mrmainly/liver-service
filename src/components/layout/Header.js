@@ -84,6 +84,11 @@ export default function Header() {
             label: "Новости",
             href: "/news",
         },
+        {
+            label: 'Наши проекты',
+            status: statusThree,
+            state: setStatusThree
+        },
         // {
         //     label: "Наши проекты",
         //     href: ''
@@ -138,11 +143,6 @@ export default function Header() {
                 {
                     label: 'Вакансии',
                     href: '/vacancy'
-                },
-                {
-                    label: 'Наши проекты',
-                    status: statusThree,
-                    state: setStatusThree
                 },
             ]
         },
