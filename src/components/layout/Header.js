@@ -138,7 +138,12 @@ export default function Header() {
                 {
                     label: 'Вакансии',
                     href: '/vacancy'
-                }
+                },
+                {
+                    label: 'Наши проекты',
+                    status: statusThree,
+                    state: setStatusThree
+                },
             ]
         },
         {
@@ -174,12 +179,7 @@ export default function Header() {
                 {
                     label: 'Трансплантация печени',
                     href: '/liver-trans'
-                },
-                {
-                    label: 'Наши проекты',
-                    status: statusThree,
-                    state: setStatusThree
-                },
+                }
             ]
         },
         {
