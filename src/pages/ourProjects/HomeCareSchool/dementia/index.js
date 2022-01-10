@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import { Layout } from '../../../components'
+import { Layout } from '../../../../components'
 
-const PreventionOfFalls = () => {
+const Dementia = () => {
     return (
         <Layout>
             <Container>
@@ -13,4 +13,4 @@ const PreventionOfFalls = () => {
     )
 }
 
-export default PreventionOfFalls
+export default Dementia

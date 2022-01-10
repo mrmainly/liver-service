@@ -10,7 +10,7 @@ import HelpFamily from './pages/helpFamily';
 import LiverTrans from './pages/liver-trans'
 import Help from './pages/help'
 import Valunteers from './pages/volunteers'
-import OurProjects from './pages/ourProjects';
+import HomeCareSchool from './pages/ourProjects/HomeCareSchool';
 
 import MediaAboutUs from './pages/aboutDropdown/mediaAboutUs'
 import DocumentsPage from './pages/aboutDropdown/documentsPage'
@@ -25,17 +25,17 @@ import ProjectNews from './pages/palliativeDropdown/projectNews'
 import SisterCare from './pages/palliativeDropdown/sisterCare'
 import Palliative from './pages/palliativeDropdown/palliative'
 
-import Stroke from './pages/ourProjects/stroke'
-import Dementia from './pages/ourProjects/dementia'
-import Rehabilitation from './pages/ourProjects/rehabilitation'
-import Pain from './pages/ourProjects/pain'
-import Hygiene from './pages/ourProjects/hygiene'
-import Feeding from './pages/ourProjects/feeding'
-import PreventionOfFalls from './pages/ourProjects/preventionOfFalls';
-import OrganizationLife from './pages/ourProjects/organizationLife'
-import Complication from './pages/ourProjects/complication'
-import FeaturesOfCare from './pages/ourProjects/featuresOfCare'
-import PsychologicalAspects from './pages/ourProjects/psychologicalAspects'
+import Stroke from './pages/ourProjects/HomeCareSchool/stroke'
+import Dementia from './pages/ourProjects/HomeCareSchool/dementia'
+import Rehabilitation from './pages/ourProjects/HomeCareSchool/rehabilitation'
+import Pain from './pages/ourProjects/HomeCareSchool/pain'
+import Hygiene from './pages/ourProjects/HomeCareSchool/hygiene'
+import Feeding from './pages/ourProjects/HomeCareSchool/feeding'
+import PreventionOfFalls from './pages/ourProjects/HomeCareSchool/preventionOfFalls';
+import OrganizationLife from './pages/ourProjects/HomeCareSchool/organizationLife'
+import Complication from './pages/ourProjects/HomeCareSchool/complication'
+import FeaturesOfCare from './pages/ourProjects/HomeCareSchool/featuresOfCare'
+import PsychologicalAspects from './pages/ourProjects/HomeCareSchool/psychologicalAspects'
 import HelpPalliative from './pages/ourProjects/helpPalliative'
 import DementiaNo from './pages/ourProjects/dementiaNo';
 import Donation from './pages/ourProjects/donation'
@@ -53,7 +53,7 @@ function App() {
         <Route path="/liver-trans" element={<LiverTrans />} />
         <Route path="/valunteers" element={<Valunteers />} />
         <Route path="/help" element={<Help />} />
-        <Route path="/our-projects" element={<OurProjects />} />
+        <Route path="/home-care-school" element={<HomeCareSchool />} />
 
         <Route path="/documents-page" element={<DocumentsPage />} />
         <Route path="/vacancy" element={<Vacancy />} />
@@ -78,6 +78,7 @@ function App() {
         <Route path="/school/complication" element={<Complication />} />
         <Route path="/school/featuresOfCare" element={<FeaturesOfCare />} />
         <Route path="/school/psychologicalAspects" element={<PsychologicalAspects />} />
+
         <Route path="/helpPalliative" element={<HelpPalliative />} />
         <Route path="/dementiaNo" element={<DementiaNo />} />
         <Route path="/donation" element={<Donation />} />

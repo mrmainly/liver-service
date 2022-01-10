@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import { Layout } from '../../../components'
+import { Layout } from '../../../../components'
 
-const Hygiene = () => {
+const FeaturesOfCare = () => {
     return (
         <Layout>
             <Container>
@@ -13,4 +13,4 @@ const Hygiene = () => {
     )
 }
 
-export default Hygiene
+export default FeaturesOfCare

@@ -3,7 +3,7 @@ import React from 'react'
 import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-import { Layout, MenuOurProject } from '../../components'
+import { Layout, MenuOurProject } from '../../../components'
 
 const useStyles = makeStyles(() => ({
     container: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
     },
 }))
 
-const OurProjects = () => {
+const HomeCareSchool = () => {
     const classes = useStyles()
     return (
         <Layout>
@@ -24,4 +24,4 @@ const OurProjects = () => {
     )
 }
 
-export default OurProjects
+export default HomeCareSchool

@@ -1,9 +1,9 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import { Layout } from '../../../components'
+import { Layout } from '../../../../components'
 
-const Complication = () => {
+const Pain = () => {
     return (
         <Layout>
             <Container>
@@ -13,4 +13,4 @@ const Complication = () => {
     )
 }
 
-export default Complication
+export default Pain

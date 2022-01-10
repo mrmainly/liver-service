@@ -197,23 +197,23 @@ export default function Header() {
                 // },
                 {
                     label: 'Проект "Школа домашнего ухода"',
-                    href: '/liver-trans'
+                    href: '/home-care-school'
                 },
                 {
                     label: 'Проект по респисной помощи семьям с тяжелобольными пациентами',
-                    href: '/liver-trans'
+                    href: '/seriouslyIllFamily'
                 },
                 {
                     label: 'Ресурсный центр поддержки семей с паллиативными пациентами',
-                    href: '/liver-trans'
+                    href: '/helpPalliative'
                 },
                 {
                     label: 'Проект "Деменции нет"',
-                    href: '/liver-trans'
+                    href: '/dementiaNo'
                 },
                 {
                     label: 'Спецпроекты по донорству',
-                    href: '/liver-trans'
+                    href: '/donation'
                 },
             ]
         }
