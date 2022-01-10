@@ -14,7 +14,6 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-
     },
     image: {
         width: '50%',
@@ -62,7 +61,7 @@ const BlogInside = () => {
     return (
         <Layout>
             <Container className={classes.container}>
-                {loading && <CircularProgress style={{ marginTop: 50 }} />}
+                {loading && <Box style={{ margin: '0 auto' }}><CircularProgress style={{ marginTop: 50 }} /></Box>}
                 <Typography variant="h4" >{title}</Typography>
                 {tags.map((item, index) => (
                     <Typography key={index} variant="body1" className={classes.dateStyles}>{date}//<span className={classes.tagStyle}>{item.name}</span></Typography>
@@ -70,20 +69,22 @@ const BlogInside = () => {
                 <div dangerouslySetInnerHTML={{ __html: body }}>
 
                 </div>
-                <Box>
-                    <Typography variant="h6">МАТЕРИАЛЫ ПО ТЕМЕ</Typography>
-                    <Box className={classes.box}>
-                        {foreign.length !== 0 ? foreign.map((item, index) => (
-                            <Box key={index} style={{ marginTop: 10 }}>
-                                <Typography variant="body1" className={classes.tagStyle} onClick={() => {
-                                    navigate(`/news-inside/${item.id}`)
-                                    window.location.reload()
-                                }}>{item.title}</Typography>
-                                <Typography variant="body2">07.07.2021//{item.tags[0].name}</Typography>
-                            </Box>
-                        )) : 'Нету материалов'}
+                {foreign.length ?
+                    <Box>
+                        <Typography variant="h6">МАТЕРИАЛЫ ПО ТЕМЕ</Typography>
+                        <Box className={classes.box}>
+                            {foreign.length !== 0 ? foreign.map((item, index) => (
+                                <Box key={index} style={{ marginTop: 10 }}>
+                                    <Typography variant="body1" className={classes.tagStyle} onClick={() => {
+                                        navigate(`/news-inside/${item.id}`)
+                                        window.location.reload()
+                                    }}>{item.title}</Typography>
+                                    <Typography variant="body2">{item.tags[0].name}</Typography>
+                                </Box>
+                            )) : 'Нету материалов'}
+                        </Box>
                     </Box>
-                </Box>
+                    : ''}
             </Container>
         </Layout >
     )

@@ -14,6 +14,7 @@ import { PageHeader } from './PageHeader'
 import MenuOurProject from './menu/MenuOurProject'
 import CardCommon from './card/CardCommon'
 import MyContainer from './container'
+import CardInfo from './card/CardInfo'
 
 export {
     Button,
@@ -31,5 +32,6 @@ export {
     PageHeader,
     MenuOurProject,
     CardCommon,
-    MyContainer
+    MyContainer,
+    CardInfo
 }
