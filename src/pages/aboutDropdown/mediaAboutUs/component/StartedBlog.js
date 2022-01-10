@@ -50,6 +50,10 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             marginTop: 50
         },
+        [theme.breakpoints.down('sm')]: {
+            alignItems: 'center',
+            textAlign: 'center'
+        },
         [theme.breakpoints.down('xs')]: {
             marginTop: 0
         },

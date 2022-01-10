@@ -35,7 +35,7 @@ const MyContainer = ({ children, wrapper, bgImg, lg, md, xs, xl, sm, minHeight, 
                     xs ?
                         xs : ''
             },
-        }
+        },
     }))
     const classes = useStyles()
     return (
@@ -47,7 +47,7 @@ const MyContainer = ({ children, wrapper, bgImg, lg, md, xs, xl, sm, minHeight, 
                     </Container>
                 </Box>
                 :
-                <Container  {...props}>
+                <Container {...props}>
                     {children}
                 </Container>
             }

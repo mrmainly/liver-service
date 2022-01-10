@@ -9,11 +9,14 @@ import { Box } from '@material-ui/core';
 
 import { useNavigate } from 'react-router-dom';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         height: 400,
         marginLeft: 15,
         marginRight: 15,
+        [theme.breakpoints.down('sm')]: {
+            marginTop: 20
+        },
     },
     media: {
         height: 230,
@@ -24,8 +27,15 @@ const useStyles = makeStyles({
         overflow: 'hidden',
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis'
-    }
-});
+    },
+    cardContent: {
+        width: '100%',
+        height: 178,
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        marginTop: 10,
+    },
+}));
 
 export default function CardCustom({ img, title, description, id }) {
     const classes = useStyles();
@@ -38,7 +48,7 @@ export default function CardCustom({ img, title, description, id }) {
                     image={img}
                     title="Contemplative Reptile"
                 />
-                <Box style={{ marginTop: 20, marginBottom: 20 }}>
+                <Box className={classes.cardContent}>
                     <Typography gutterBottom variant="body1" component="h2" className={classes.title}>
                         {title}
                     </Typography>

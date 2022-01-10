@@ -17,7 +17,7 @@ const ClippingNewsScreen = () => {
     }, [])
     return (
         <MyContainer wrapper={false} style={{
-            marginTop: 100,
+            marginTop: 50,
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -28,7 +28,7 @@ const ClippingNewsScreen = () => {
             <Grid container style={{ marginTop: 50 }}>
                 {state ? state.map((item) => {
                     return (
-                        <Grid item lg={4}>
+                        <Grid item lg={4} xl={4} md={4} sm={6} xs={12}>
                             <CardBlog img={item.title_image} title={item.title} description={item.description} id={item.id} />
                         </Grid>
                     )

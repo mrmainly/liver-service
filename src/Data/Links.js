@@ -42,7 +42,23 @@ const links = [
     {
         link: '/school/psychologicalAspects',
         label: 'Психологические аспекты',
-    }
+    },
+    {
+        link: '/seriouslyIllFamily',
+        label: 'Проект по респисной помощи семьям с тяжелобольными пациентами',
+    },
+    {
+        link: '/helpPalliative',
+        label: 'Ресурсный центр поддержки семей с паллиативными пациентами',
+    },
+    {
+        link: '/dementiaNo',
+        label: 'Проект "Деменции нет"',
+    },
+    {
+        link: '/donation',
+        label: 'Спецпроекты по донорству',
+    },
 ]
 
 export default links
