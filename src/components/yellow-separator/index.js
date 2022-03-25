@@ -4,6 +4,6 @@ import Box from "@material-ui/core/Box";
 
 export const YellowSeparator = () => {
     return (
-        <Box style={{ margin: "auto", width: 80, height: 5, backgroundColor: '#00FFC2' }} />
+        <Box style={{ margin: "auto", width: 50, height: 3, background: '#F2A340', marginBottom: 20, opacity: ' 0.45' }} />
     );
 };

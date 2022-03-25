@@ -4,17 +4,21 @@ import { Form } from './UI/form'
 import Notification from './notification'
 import CardCustom from './card/CardCustom'
 import CardUsefulLink from './card/CardUsefulLink'
-import Slider from './slider'
+import SliderUsefulLinks from './slider/useful-links-slider'
 import Layout from './layout'
 import CardBlog from './card/CardBlog'
 import CardNewBlog from './card/CardNewBlog'
 import Pagination from './pagination'
 import CardTeam from './card/CardTeam'
-import { PageHeader } from './PageHeader'
+import { PageHeader } from './page-header'
 import MenuOurProject from './menu/MenuOurProject'
 import CardCommon from './card/CardCommon'
 import MyContainer from './container'
 import CardInfo from './card/CardInfo'
+import { YellowSeparator } from './yellow-separator'
+
+import Header from './header'
+import Footer from './footer'
 
 export {
     Button,
@@ -23,7 +27,6 @@ export {
     Notification,
     CardCustom,
     CardUsefulLink,
-    Slider,
     Layout,
     CardBlog,
     CardNewBlog,
@@ -33,5 +36,9 @@ export {
     MenuOurProject,
     CardCommon,
     MyContainer,
-    CardInfo
+    CardInfo,
+    Header,
+    SliderUsefulLinks,
+    YellowSeparator,
+    Footer
 }

@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import { useParams } from 'react-router-dom'
-import Header from './Header'
+import { Header, Footer } from '..'
 import { stateReducer } from '../../reducer'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -10,7 +10,8 @@ import { DispatchContext, StateContext, defaultStore } from '../../store/index'
 
 const useStyles = makeStyles(() => ({
     container: {
-        minHeight: 600
+        minHeight: 600,
+        background: '#FCFCFC'
     }
 }))
 
@@ -26,6 +27,7 @@ const Layout = ({ children }) => {
                 <Box className={classes.container}>
                     {children}
                 </Box>
+                <Footer />
             </StateContext.Provider>
         </DispatchContext.Provider >
     )

@@ -32,10 +32,9 @@ const useStyles = makeStyles((theme) => ({
     },
     menuButton: {
         fontFamily: "Open Sans, sans-serif",
-        fontWeight: 600,
-        size: "18px",
         marginLeft: "38px",
         color: '#1B1642',
+        fontSize: 18,
         [theme.breakpoints.down('md')]: {
             marginTop: 10,
             marginLeft: 0,
@@ -77,39 +76,25 @@ export default function Header() {
     const navigate = useNavigate()
     const headersData = [
         {
-            label: "О нас",
-            state: setStatusFour
+            label: "ГЛАВНАЯ",
+            href: '/'
         },
         {
-            label: "Новости",
+            label: "НОВОСТИ",
             href: "/news",
         },
         {
-            label: 'Наши проекты',
-            status: statusThree,
-            state: setStatusThree
-        },
-        // {
-        //     label: "Наши проекты",
-        //     href: ''
-        // },
-        {
-            label: "Паллиативная помощь",
-            state: setStatusFirst
+            label: 'ПРОЕКТЫ',
+            href: '',
         },
         {
-            label: "Трансплантация органов",
-            state: setStatusSecond
+            label: "ПАЛЛИАТИВНАЯ ПОМОЩЬ",
+            href: ''
         },
-
-        // {
-        //     label: "Волонтерам",
-        //     href: '/valunteers'
-        // },
-        // {
-        //     label: "Помочь",
-        //     href: '/help'
-        // },
+        {
+            label: "ВОЛОНТЕРАМ",
+            href: ''
+        }
     ];
     const menuData = [
         {
@@ -117,32 +102,24 @@ export default function Header() {
             setStatus: setStatusFour,
             menuElems: [
                 {
-                    label: 'О нас',
+                    label: 'ГЛАВНАЯ',
                     href: '/about'
                 },
                 {
-                    label: 'Документы',
+                    label: 'НОВОСТИ',
                     href: '/documents-page'
                 },
                 {
-                    label: 'Команда',
+                    label: 'ПРОЕКТЫ',
                     href: '/team'
                 },
                 {
-                    label: 'Отчеты',
+                    label: 'ПАЛЛИАТИВНАЯ ПОМОЩЬ',
                     href: '/reports'
                 },
                 {
-                    label: 'СМИ о нас',
+                    label: 'ВОЛОНТЕРАМ',
                     href: '/'
-                },
-                {
-                    label: 'Контакты',
-                    href: '/contacts'
-                },
-                {
-                    label: 'Вакансии',
-                    href: '/vacancy'
                 },
             ]
         },

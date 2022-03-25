@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { useEffect, useState } from "react";
-import { mainTheme } from "../styles";
+import { mainTheme } from "../../styles";
 import { makeStyles, Typography, Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     text: {
-        color: 'rgba(42, 95, 167, 1)',
+        color: '#F2A340',
         textAlign: 'center',
         fontWeight: 500,
         lineHeight: 1.08,
-        fontSize: 60,
+        fontSize: 40,
         marginLeft: 20,
         marginRight: 20,
         [theme.breakpoints.down('xs')]: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     line: {
         width: 80,
         height: 2,
-        background: 'rgba(42, 95, 167, 1)',
+        background: '#F2A340',
         [theme.breakpoints.down('xs')]: {
             width: 50
         },

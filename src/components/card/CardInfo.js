@@ -26,21 +26,18 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     title: {
-        color: mainTheme.textColors.orange,
+        color: 'black',
     },
 }));
-const CardNewBlog = ({ text_top, number, text_bottom }) => {
+const CardNewBlog = ({ number, text_bottom }) => {
     const classes = useStyles();
 
     return (
         <Box className={classes.root}>
-            <Typography variant="h4" className={classes.title}>
-                {text_top}
-            </Typography>
-            <Typography variant="h2" className={classes.title}>
+            <Typography variant="h3" className={classes.title}>
                 {number}
             </Typography>
-            <Typography variant="h4" className={classes.title}>
+            <Typography variant="body1" className={classes.title}>
                 {text_bottom}
             </Typography>
         </Box>

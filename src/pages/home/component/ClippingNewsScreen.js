@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { MyContainer, CardBlog, Button } from '../../../../components'
+import { MyContainer, CardBlog, Button } from '../../../components'
 import { Typography, Grid, CircularProgress } from '@material-ui/core'
-import API from '../../../../api'
+import API from '../../../api'
 
 const ClippingNewsScreen = () => {
     const [state, setState] = useState([])

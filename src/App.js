@@ -12,7 +12,7 @@ import Help from './pages/help'
 import Valunteers from './pages/volunteers'
 import HomeCareSchool from './pages/ourProjects/HomeCareSchool';
 
-import MediaAboutUs from './pages/aboutDropdown/mediaAboutUs'
+import Home from './pages/home'
 import DocumentsPage from './pages/aboutDropdown/documentsPage'
 import Vacancy from './pages/aboutDropdown/vacancy'
 import Contacts from './pages/aboutDropdown/contacts'
@@ -45,7 +45,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MediaAboutUs />} exact />
+        <Route path="/" element={<Home />} exact />
         <Route path="/news" element={<News />} />
         <Route path="/news-inside/:id" element={<NewsInside />} />
         <Route path="/bud-page" element={<Bud />} />

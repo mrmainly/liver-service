@@ -44,7 +44,7 @@ const Blog = () => {
         <Layout>
             <Container>
                 <div className={classes.root}>
-                    <PageHeader title="Новости" description='это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.' />
+                    <PageHeader title="Новости" />
                     {loading && <CircularProgress style={{ marginTop: 50 }} />}
                     <NewsCardBlock data={news} />
                     <Pagination style={{ marginTop: 20 }} count={countNumber} onChange={(event, value) => setCurrentPage(value)} />

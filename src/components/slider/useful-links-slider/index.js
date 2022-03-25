@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Box, Container, Typography } from '@material-ui/core'
 import Slider from 'react-slick'
 
-import { CardUsefulLink } from '../index'
+import { CardUsefulLink, YellowSeparator } from '../..'
 
 const useStyles = makeStyles(() => ({
     titleBox: {
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     }
 }))
 
-const SliderCustom = () => {
+const UsefulLinks = () => {
     const [slidesToShow, setSlidesToShow] = useState()
     const classes = useStyles()
     const settings = {
@@ -43,33 +43,28 @@ const SliderCustom = () => {
     })
     const array = [
         {
-            img: '/image/Group-367.png',
+            img: '/image/Group-3691.png',
             description: 'Правительство Республики Саха (Якутия)',
             Link: 'https://www.sakha.gov.ru/'
         },
         {
-            img: '/image/Group-369.png',
+            img: '/image/Group-367(1)2.png',
             description: 'Министерство здравоохранения Российской Федерации',
             Link: 'https://minzdrav.gov.ru/'
         },
         {
-            img: '/image/Group-367.png',
+            img: '/image/Group-362(2).png',
             description: 'Министерство здравоохранения Республики Саха (Якутия)',
             Link: 'https://minzdrav.sakha.gov.ru/'
-        },
-        {
-            img: '/image/Group-369.png',
-            description: 'Министерство здравоохранения Российской Федерации',
-            Link: 'https://minzdrav.gov.ru/'
         },
     ]
 
     return (
         <Box style={{ overflow: 'hidden', }}>
             <Container>
-                <Box className={classes.titleBox}>
-                    <Typography variant="h5" >Наши партнеры</Typography>
-                    <Typography variant="body1">на партнеров проекта</Typography>
+                <YellowSeparator />
+                <Box style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Typography variant="h4" style={{ marginBottom: 20, color: '#F2A340' }}>Полезные ссылки</Typography>
                 </Box>
                 <Slider {...settings} >
                     {array.map((item, index) => (
@@ -83,4 +78,4 @@ const SliderCustom = () => {
     )
 }
 
-export default SliderCustom
+export default UsefulLinks

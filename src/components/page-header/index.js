@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { ExtraLargeHeader } from "./ExtraLargeHeader";
+import { ExtraLargeHeader } from "../extra-large-header";
 
 const useStyles = makeStyles({
     container: {
@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        marginBottom: 50
+        marginBottom: 30
     },
     description: {
         margin: '16px 0px',

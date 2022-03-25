@@ -2,9 +2,12 @@ import React from 'react'
 import StartedBlog from './component/StartedBlog'
 import AnswerGroup from './component/AnswerGroup'
 import { makeStyles } from '@material-ui/core/styles';
-import { Slider, Layout } from '../../../components'
+import { SliderUsefulLinks, Layout } from '../../components'
 import InfoCardScreen from './component/InfoCardScreen'
 import ClippingNewsScreen from './component/ClippingNewsScreen';
+import InfoTextScreen from './component/InfoTextScreen'
+
+import OurProjectScreen from '../../constructor/our-project-screen';
 
 import { Box } from '@material-ui/core'
 
@@ -13,19 +16,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const MediaAboutUs = () => {
+const Home = () => {
     const classes = useStyles()
     return (
-        <Layout>
+        <Layout style={{ bgcolor: '#FCFCFC' }}>
             <StartedBlog />
             <InfoCardScreen />
-            {/* <AnswerGroup /> */}
-            <ClippingNewsScreen />
+            <AnswerGroup />
+            <InfoTextScreen />
+            <OurProjectScreen />
             <Box style={{ marginTop: 100, marginBottom: 100 }}>
-                <Slider />
+                <SliderUsefulLinks />
             </Box>
         </Layout>
     )
 }
 
-export default MediaAboutUs
+export default Home
