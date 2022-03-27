@@ -11,7 +11,8 @@ import { DispatchContext, StateContext, defaultStore } from '../../store/index'
 const useStyles = makeStyles(() => ({
     container: {
         minHeight: 600,
-        background: '#FCFCFC'
+        background: '#FCFCFC',
+        paddingBottom: 100
     }
 }))
 

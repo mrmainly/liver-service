@@ -67,30 +67,30 @@ const FirstBlog = () => {
     }
     const object = [
         {
-            description: 'мasdasdasdasd',
-            number: '4',
+            description: 'официальных проекта с участием врачей и пациентов с 2014 г.',
+            number: '9',
             show: showChange(599)
         },
         {
-            description: 'asdasdasdasd',
-            number: '2020',
+            description: 'добровольцев помогают нам с 2014 г.',
+            number: '150',
             show: showChange(599)
         },
         {
-            description: 'иasdasdasd',
-            number: '60000$',
+            description: 'гранта ФПГ (через 2 НКО)',
+            number: '3',
             show: showChange(960)
         },
         {
-            description: 'asdasdasdasd',
-            number: '12',
+            description: 'проведено благотворительных фестиваля "Надежда на будущее"',
+            number: '2',
             show: false,
         },
     ]
     return (
         <div>
             <Container className={classes.container}>
-                <Typography variant="h3" className={classes.title}>Слоган команды<br />Мы сделаем все, что в наших руках</Typography>
+                <Typography variant="h3" className={classes.title}>Мы за совместные проекты врачебного и пациентского сообществ</Typography>
                 <Grid container className={classes.Grid_Box}>
                     {object.map((item, index) => (
                         <Grid item className={classes.Grid_Card} key={index} lg={3} xl={3} sm={4} md={3} xs={6}>

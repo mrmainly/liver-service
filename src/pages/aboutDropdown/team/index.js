@@ -10,7 +10,7 @@ import MapScreen from './components/MapScreen'
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        background: `linear-gradient(145.24deg, rgba(58, 113, 253, 0.25) 14.79%, rgba(183, 225, 255, 0) 61.66%), radial-gradient(46.05% 156.8% at 84.98% 128.33%, rgba(89, 106, 255, 0.25) 0%, rgba(68, 75, 255, 0) 100%), #B7E1FF`,
+        background: `#FFAB7E`,
         backgroundSize: 'cover'
     },
     answerContainer: {
@@ -36,10 +36,6 @@ const Team = () => {
             <SliderTeam />
 
             <DreamTeam />
-            <div className={classes.answerContainer}>
-                <AnswerTeam />
-            </div>
-            <MapScreen />
         </Layout>
     )
 }

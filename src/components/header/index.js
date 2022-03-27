@@ -85,7 +85,7 @@ export default function Header() {
         },
         {
             label: 'ПРОЕКТЫ',
-            href: '',
+            state: setStatusFirst,
         },
         {
             label: "ПАЛЛИАТИВНАЯ ПОМОЩЬ",
@@ -93,7 +93,7 @@ export default function Header() {
         },
         {
             label: "ВОЛОНТЕРАМ",
-            href: ''
+            href: '/valunteers'
         }
     ];
     const menuData = [
@@ -128,20 +128,24 @@ export default function Header() {
             setStatus: setStatusFirst,
             menuElems: [
                 {
-                    label: 'Паллиативная медицинская помощь',
+                    label: 'Наши проекты',
                     href: '/palliative'
                 },
                 {
-                    label: 'Отделение сестринского ухода',
+                    label: 'отделение сестринского ухода',
                     href: '/sister-care'
                 },
                 {
-                    label: 'Проект "На связи"',
-                    href: '/project-in-touch'
+                    label: 'Спецпроект по донерству',
+                    href: '/donation'
                 },
                 {
-                    label: 'Новости отделения',
-                    href: '/project-news'
+                    label: 'Проект школа домашнего ухода',
+                    href: '/home-care-school'
+                },
+                {
+                    label: 'проект "на связи"',
+                    href: '/project-in-touch'
                 }
             ]
         },

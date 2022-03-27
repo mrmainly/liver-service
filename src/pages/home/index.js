@@ -24,7 +24,7 @@ const Home = () => {
             <InfoCardScreen />
             <AnswerGroup />
             <InfoTextScreen />
-            <OurProjectScreen />
+            <OurProjectScreen pageHeader={true} />
             <Box style={{ marginTop: 100, marginBottom: 100 }}>
                 <SliderUsefulLinks />
             </Box>

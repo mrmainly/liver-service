@@ -10,7 +10,7 @@ import CommonCardConstructor from '../../../constructor/CommonCardConstructor'
 const Vacancy = () => {
     return (
         <Layout>
-            <Container>
+            <Container style={{ paddingTop: 100 }}>
                 <PageHeader title="Вакансии" description='это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.' />
                 <CommonCardConstructor data={DataVacancy} />
             </Container>

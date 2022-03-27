@@ -25,32 +25,26 @@ const DreamTeam = () => {
 
     const object = [
         {
-            img: '/image/Rectangle87.png',
             title: 'anton',
             description: 'Founder, CVO'
         },
         {
-            img: '/image/Rectangle87.png',
             title: 'anton',
             description: 'CEO, team lead'
         },
         {
-            img: '/image/Rectangle87.png',
             title: 'anton',
             description: 'Project manager, marketer'
         },
         {
-            img: '/image/Rectangle87.png',
             title: 'anton',
             description: 'CTO, Full stack developer'
         },
         {
-            img: '/image/Rectangle87.png',
             title: 'anton',
             description: 'Chief Design Officer'
         },
         {
-            img: '/image/Rectangle87.png',
             title: 'anton',
             description: 'SEO, SMM'
         },
@@ -59,8 +53,7 @@ const DreamTeam = () => {
     return (
         <Container className={classes.container}>
             <Grid >
-                <Typography variant="h3" style={{ color: 'black', fontFamily: 'serif', fontWeight: 'bold' }}>Dream Team</Typography>
-                <Typography style={{ color: '#8D9AAE' }}>Lorem lorem loem</Typography>
+                <Typography variant="h3" style={{ color: 'black', fontFamily: 'serif', fontWeight: 'bold' }}>Команда</Typography>
             </Grid>
             <Grid container className={classes.content}>
                 {object.map((item, index) => (

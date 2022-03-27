@@ -32,13 +32,13 @@ const SliderMedic = () => {
 
     const object = [
         {
-            img: '/image/Rectangle78.png',
+            img: '/image/Rectangle178.png',
         },
         {
-            img: '/image/Rectangle78.png',
+            img: '/image/Rectangle178.png',
         },
         {
-            img: '/image/Rectangle78.png',
+            img: '/image/Rectangle178.png',
         },
     ]
 

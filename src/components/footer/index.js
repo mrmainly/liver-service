@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Grid, Typography, MenuItem, Link, Box, IconButton } from '@material-ui/core';
+import { Container, Grid, Typography, MenuItem, Box, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
+import { Link } from 'react-router-dom'
 
 import { Button } from '..'
 
@@ -51,23 +52,23 @@ export default function Footer(props) {
             options: [
                 {
                     label: 'Волонтерам',
-                    to: ''
+                    to: '/valunteers'
                 },
                 {
                     label: 'Вакансии',
-                    to: ''
+                    to: '/vacancy'
                 },
                 {
                     label: 'Контакты',
-                    to: ''
+                    to: '/contacts'
                 },
                 {
                     label: 'Команда',
-                    to: ''
+                    to: '/team'
                 },
                 {
                     label: 'Проекты',
-                    to: ''
+                    to: '/about'
                 },
             ]
         },
@@ -90,7 +91,7 @@ export default function Footer(props) {
         }
     ]
     return (
-        <footer style={{ backgroundColor: '#313131', paddingTop: 50, paddingBottom: 50, marginTop: 100, color: 'white' }}>
+        <footer style={{ backgroundColor: '#313131', paddingTop: 50, paddingBottom: 50, color: 'white' }}>
             <Container>
                 <Grid container>
                     {array.map((item, index) => (

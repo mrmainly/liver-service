@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        marginTop: 100
+        paddingTop: 100
     },
 }));
 

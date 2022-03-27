@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 });
 
 
-const OurProjectScreen = ({ ...props }) => {
+const OurProjectScreen = ({ pageHeader, ...props }) => {
     const classes = useStyles()
     const array = [
         {
@@ -37,9 +37,13 @@ const OurProjectScreen = ({ ...props }) => {
         },
     ]
     return (
-        <MyContainer style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <YellowSeparator />
-            <Typography variant="h4" style={{ marginBottom: 20, color: '#F2A340' }}>Наши проекты</Typography>
+        <Box {...props}>
+            {pageHeader ?
+                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <YellowSeparator />
+                    <Typography variant="h4" style={{ marginBottom: 20, color: '#F2A340' }}>Наши проекты</Typography>
+                </Box>
+                : <Box style={{ height: 2, background: 'rgba(0, 0, 0, 0.15)', opacity: ' 0.45', marginBottom: 20 }}></Box>}
             <Grid className={classes.flexBox} container>
                 {array.map((item, index) => (
                     <Grid key={index} item lg={3} xl={3} md={3} sm={6} xs={12}>
@@ -47,7 +51,7 @@ const OurProjectScreen = ({ ...props }) => {
                     </Grid>
                 ))}
             </Grid>
-        </MyContainer>
+        </Box>
     )
 }
 
