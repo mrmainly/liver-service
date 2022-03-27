@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     container: {
         minHeight: 600,
         background: '#FCFCFC',
-        paddingBottom: 100
+        paddingBottom: 50
     }
 }))
 

@@ -20,10 +20,9 @@ import Reports from './pages/aboutDropdown/reports'
 import Team from './pages/aboutDropdown/team'
 import About from './pages/aboutDropdown/about'
 
-import ProjectInTouch from './pages/palliativeDropdown/projectInTouch'
-import ProjectNews from './pages/palliativeDropdown/projectNews'
-import SisterCare from './pages/palliativeDropdown/sisterCare'
-import Palliative from './pages/palliativeDropdown/palliative'
+import ProjectInTouch from './pages/projects/projectInTouch'
+import SisterCare from './pages/projects/sisterCare'
+import Palliative from './pages/projects/palliative'
 
 import Stroke from './pages/ourProjects/HomeCareSchool/stroke'
 import Dementia from './pages/ourProjects/HomeCareSchool/dementia'
@@ -38,8 +37,9 @@ import FeaturesOfCare from './pages/ourProjects/HomeCareSchool/featuresOfCare'
 import PsychologicalAspects from './pages/ourProjects/HomeCareSchool/psychologicalAspects'
 import HelpPalliative from './pages/ourProjects/helpPalliative'
 import DementiaNo from './pages/ourProjects/dementiaNo';
-import Donation from './pages/ourProjects/donation'
 import SeriouslyIllFamily from './pages/ourProjects/seriouslyIllFamily'
+
+import Donation from './pages/projects/donation'
 
 function App() {
   return (
@@ -63,7 +63,6 @@ function App() {
         <Route path="/about" element={<About />} />
 
         <Route path="/project-in-touch" element={<ProjectInTouch />} />
-        <Route path="/project-news" element={<ProjectNews />} />
         <Route path="/sister-care" element={<SisterCare />} />
         <Route path="/palliative" element={<Palliative />} />
 
