@@ -89,7 +89,7 @@ export default function Header() {
         },
         {
             label: "ПАЛЛИАТИВНАЯ ПОМОЩЬ",
-            href: ''
+            state: setStatusSecond
         },
         {
             label: "ВОЛОНТЕРАМ",
@@ -132,10 +132,6 @@ export default function Header() {
                     href: '/palliative'
                 },
                 {
-                    label: 'отделение сестринского ухода',
-                    href: '/sister-care'
-                },
-                {
                     label: 'Спецпроект по донерству',
                     href: '/donation'
                 },
@@ -144,9 +140,17 @@ export default function Header() {
                     href: '/home-care-school'
                 },
                 {
-                    label: 'проект "на связи"',
-                    href: '/project-in-touch'
-                }
+                    label: 'Проект по респисной помощи семьям с тяжелобольными пациентами',
+                    href: '/seriouslyIllFamily'
+                },
+                {
+                    label: 'Ресурсный центр поддержки семей с паллиативными пациентами',
+                    href: '/helpPalliative'
+                },
+                {
+                    label: 'Проект "Деменции нет"',
+                    href: '/dementiaNo'
+                },
             ]
         },
         {
@@ -154,13 +158,17 @@ export default function Header() {
             setStatus: setStatusSecond,
             menuElems: [
                 {
-                    label: 'Трансплантация почки',
-                    href: '/bud-page'
+                    label: 'Отделение сестринского ухода',
+                    href: '/sister-care'
                 },
                 {
-                    label: 'Трансплантация печени',
-                    href: '/liver-trans'
-                }
+                    label: 'Проект "на связи"',
+                    href: '/project-in-touch'
+                },
+                {
+                    label: 'Новости отделения',
+                    href: '/project-news'
+                },
             ]
         },
         {
