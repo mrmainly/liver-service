@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Container } from '@material-ui/core'
 
-import DataVacancy from '../../../Data/DataVacancy'
-import { Layout, PageHeader } from '../../../components'
-import CommonCardConstructor from '../../../constructor/CommonCardConstructor'
+import DataVacancy from '../../Data/DataVacancy'
+import { Layout, PageHeader } from '../../components'
+import CommonCardConstructor from '../../constructor/CommonCardConstructor'
 
 
 const Vacancy = () => {

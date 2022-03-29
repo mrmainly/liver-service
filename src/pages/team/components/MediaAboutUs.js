@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Container, Grid, Box, Typography } from '@material-ui/core'
 
-import { CardMedia, YellowSeparator } from '../../../../components'
+import { CardMedia, YellowSeparator } from '../../../components'
 
 const MediaAboutUs = () => {
     const array = [

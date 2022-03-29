@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Typography, Box, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import { CardTeam } from '../../../../components'
+import { CardTeam } from '../../../components'
 
 const useStyles = makeStyles((theme) => ({
     content: {

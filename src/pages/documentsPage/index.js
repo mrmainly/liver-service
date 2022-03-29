@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Container, Typography, Box, Grid } from '@material-ui/core'
-import { Layout, PageHeader } from '../../../components'
+import { Layout, PageHeader } from '../../components'
 
 const DocumentPage = () => {
     const array = [
