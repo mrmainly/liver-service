@@ -4,15 +4,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import { CardTeam } from '../../../../components'
 
 const useStyles = makeStyles((theme) => ({
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        textAlign: 'center',
-        flexDirection: 'column',
-        marginTop: 70
-    },
     content: {
         display: 'flex',
         justifyContent: 'center',
@@ -25,35 +16,51 @@ const DreamTeam = () => {
 
     const object = [
         {
-            title: 'anton',
-            description: 'Founder, CVO'
+            title: 'Наталия Каратаева',
+            description: ['Директор, кандидат биологических наук', '+7(914)108-96-59', 'proekt-hope@mail.ru']
         },
         {
-            title: 'anton',
-            description: 'CEO, team lead'
+            title: 'Наталия Жиркова',
+            description: ['Координатор спецпроектов по донорству']
         },
         {
-            title: 'anton',
-            description: 'Project manager, marketer'
+            title: 'Ангелина Изюмская',
+            description: ['Руководитель сообщества "Донор.Info" спецпроектов по донорству']
         },
         {
-            title: 'anton',
-            description: 'CTO, Full stack developer'
+            title: 'Айталина Иванова',
+            description: ['Руководитель родительского сообщества спецпроектов по донорств']
         },
         {
-            title: 'anton',
-            description: 'Chief Design Officer'
+            title: 'Екатерина Васильева',
+            description: ['руководитель проекта "Школа домашнего ухода" для паллиативных пациентов, врач - терапевт паллиативной медицинской помощи']
         },
         {
-            title: 'anton',
-            description: 'SEO, SMM'
+            title: 'Нарыйа Стручкова',
+            description: ['тренер-преподаватель по уходу, медсестра паллиативной медицинской помощи']
+        },
+        {
+            title: 'Татьяна Габышева',
+            description: ['тренер-преподаватель по уходу, медсестра паллиативной медицинской помощи']
+        },
+        {
+            title: 'Антонина Анисимова',
+            description: ['врач-нефролог проекта "Надежда на будущее. Арктика 1.0"']
+        },
+        {
+            title: 'Валерия Ефимова',
+            description: ['айти волонтер']
+        },
+        {
+            title: '10. Катерина Григорьева',
+            description: ['медиа-амбассадор спецпроектов по донорству']
         },
     ]
 
     return (
-        <Container className={classes.container}>
+        <Container style={{ marginTop: 100 }}>
             <Grid >
-                <Typography variant="h3" style={{ color: 'black', fontFamily: 'serif', fontWeight: 'bold' }}>Команда</Typography>
+                <Typography variant="h3" style={{ color: '#BE6E20' }}>Команда</Typography>
             </Grid>
             <Grid container className={classes.content}>
                 {object.map((item, index) => (

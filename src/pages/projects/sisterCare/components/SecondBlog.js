@@ -87,15 +87,15 @@ const SecondBlog = () => {
                 <TextAndImg descriptions={text} img={'/image/Rectangle311.png'} />
                 <Box style={{ marginTop: 20 }}>
                     {array.map((item, index) => (
-                        <Box>
+                        <Box key={index}>
                             {item.type === 'text' ?
-                                <Typography variant="body1" key={index} style={{ marginBottom: 20 }}>{item.text}</Typography>
+                                <Typography variant="body1" style={{ marginBottom: 20 }}>{item.text}</Typography>
                                 :
                                 <Box style={{ marginBottom: 20 }}>
 
                                     {item.columns.map((item, index) => (
-                                        <ul>
-                                            <li key={index} >
+                                        <ul key={index}>
+                                            <li>
                                                 {item}
                                             </li>
                                         </ul>

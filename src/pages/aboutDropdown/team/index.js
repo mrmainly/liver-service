@@ -5,8 +5,7 @@ import { Layout } from '../../../components'
 import FirstBlog from './components/FirstBlog'
 import SliderTeam from './components/SliderTeam'
 import DreamTeam from './components/DreamTeam'
-import AnswerTeam from './components/AnswerTeam'
-import MapScreen from './components/MapScreen'
+import MediaAboutUs from './components/MediaAboutUs'
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -34,8 +33,8 @@ const Team = () => {
                 <FirstBlog />
             </div>
             <SliderTeam />
-
             <DreamTeam />
+            <MediaAboutUs />
         </Layout>
     )
 }

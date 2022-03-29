@@ -9,18 +9,15 @@ import { CardActions, Button } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 240,
-        backgroundColor: '#EAF5FF',
-        borderTopLeftRadius: 20,
-        borderEndEndRadius: 20,
+        width: '90%',
+        backgroundColor: 'white',
         marginTop: 30,
         margin: '0 auto',
         '&:focus': {
             outline: "none",
         },
-    },
-    media: {
-        height: 320,
+        height: 200,
+        textAlign: 'center'
     },
 });
 
@@ -29,18 +26,15 @@ export default function CardTeam({ img, title, description }) {
 
     return (
         <Card className={classes.root}>
-            <CardMedia
-                className={classes.media}
-                image={img}
-                title="Contemplative Reptile"
-            />
-            <CardContent style={{ marginTop: '-95px' }}>
-                <Typography variant="body2" component="p">
+            <CardContent>
+                <Typography variant="h6" component="p" style={{ color: '#F2A340' }}>
                     {title}
                 </Typography>
-                <Typography variant="body2" component="p" style={{ color: '#22A2FF' }}>
-                    {description}
-                </Typography>
+                {description.map((item, index) => (
+                    <Typography key={index} variant="body1" component="p" style={{ marginTop: 5, color: 'rgba(49, 49, 49, 0.55)' }}>
+                        {item}
+                    </Typography>
+                ))}
             </CardContent>
         </Card>
     );

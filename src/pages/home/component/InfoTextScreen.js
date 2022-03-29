@@ -90,7 +90,7 @@ const InfoTextScreen = () => {
                     </Grid>
                     <Grid item lg={6} sm={11} md={6} xl={6} xs={11} className={classes.infoBlock}>
                         {TextInfo.map((item, index) => (
-                            <Typography variant="body1" className={classes.description}>
+                            <Typography variant="body1" className={classes.description} key={index}>
                                 {item}
                             </Typography>
                         ))}

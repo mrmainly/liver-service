@@ -17,6 +17,7 @@ import MyContainer from './container'
 import CardInfo from './card/CardInfo'
 import { YellowSeparator } from './yellow-separator'
 import TextAndImg from './text-and-img'
+import CardMedia from './card/CardMedia'
 
 import Header from './header'
 import Footer from './footer'
@@ -42,5 +43,6 @@ export {
     SliderUsefulLinks,
     YellowSeparator,
     Footer,
-    TextAndImg
+    TextAndImg,
+    CardMedia
 }
