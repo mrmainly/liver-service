@@ -15,8 +15,10 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 50,
         marginTop: 100,
         [theme.breakpoints.down('sm')]: {
-            marginTop: 0,
             marginBottom: 0,
+            background: '#F2A340',
+            paddingTop: 0,
+            marginBottom: 80
         },
         display: 'flex',
         alignItems: 'center',

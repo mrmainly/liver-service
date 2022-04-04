@@ -6,7 +6,7 @@ import { mainTheme } from '../../styles'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        boxShadow: '0px 2px 36px rgba(0, 0, 0, 0.08)',
+        background: 'white',
         marginRight: 15,
         marginLeft: 15,
         padding: 10,
