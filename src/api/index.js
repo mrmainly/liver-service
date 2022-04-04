@@ -5,7 +5,7 @@ const publicURL = 'http://liver.mondino.tech/'
 
 const api = (url) => {
     const instance = axios.create({
-        baseURL: testURL + url,
+        baseURL: publicURL + url,
         headers: {
             'Content-Type': 'application/json'
         },
