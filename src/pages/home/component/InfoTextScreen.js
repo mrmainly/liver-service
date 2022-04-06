@@ -15,8 +15,10 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: 50,
         marginTop: 100,
         [theme.breakpoints.down('sm')]: {
-            marginTop: 0,
             marginBottom: 0,
+            background: '#F2A340',
+            paddingTop: 0,
+            marginBottom: 80
         },
         display: 'flex',
         alignItems: 'center',
@@ -62,14 +64,12 @@ const useStyles = makeStyles((theme) => ({
     title: {
         color: 'white',
         marginBottom: 20,
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
         fontStyle: 'normal',
         [theme.breakpoints.down('xs')]: {
             fontSize: 35
         },
     },
     description: {
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
         fontStyle: 'normal',
         marginTop: 10,
         [theme.breakpoints.down('xs')]: {

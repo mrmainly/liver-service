@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         color: 'white',
-        textShadow: '0px 2px 3px rgba(0, 0, 0, 0.25)',
         [theme.breakpoints.down('sm')]: {
             fontSize: 55
         },
@@ -61,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 15,
         fontSize: 30,
         fontWeight: 'bold',
-        textShadow: '0px 2px 3px rgba(0, 0, 0, 0.25)',
     }
 }));
 

@@ -38,19 +38,21 @@ const OurProjectScreen = ({ pageHeader, ...props }) => {
     ]
     return (
         <Box {...props}>
-            {pageHeader ?
-                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <YellowSeparator />
-                    <Typography variant="h4" style={{ marginBottom: 20, color: '#F2A340' }}>Наши проекты</Typography>
-                </Box>
-                : ''}
-            <Grid className={classes.flexBox} container>
-                {array.map((item, index) => (
-                    <Grid key={index} item lg={3} xl={3} md={3} sm={6} xs={12}>
-                        <CardUsefulLink img={item.img} description={item.description} link={item.Link} />
-                    </Grid>
-                ))}
-            </Grid>
+            <MyContainer wrapper={false}>
+                {pageHeader ?
+                    <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <YellowSeparator />
+                        <Typography variant="h4" style={{ marginBottom: 20, color: '#F2A340' }}>Наши проекты</Typography>
+                    </Box>
+                    : ''}
+                <Grid className={classes.flexBox} container>
+                    {array.map((item, index) => (
+                        <Grid key={index} item lg={3} xl={3} md={3} sm={6} xs={12}>
+                            <CardUsefulLink img={item.img} description={item.description} link={item.Link} />
+                        </Grid>
+                    ))}
+                </Grid>
+            </MyContainer>
         </Box>
     )
 }

@@ -25,7 +25,7 @@ const Home = () => {
             <AnswerGroup />
             <InfoTextScreen />
             <OurProjectScreen pageHeader={true} />
-            <Box style={{ marginTop: 100, marginBottom: 100 }}>
+            <Box style={{ marginTop: 80, marginBottom: 100 }}>
                 <SliderUsefulLinks />
             </Box>
         </Layout>

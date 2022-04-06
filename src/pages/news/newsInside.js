@@ -10,7 +10,7 @@ import API from '../../api'
 
 const useStyles = makeStyles(() => ({
     container: {
-        marginTop: 50,
+        paddingTop: 50,
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column',
