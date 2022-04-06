@@ -60,14 +60,12 @@ const useStyles = makeStyles((theme) => ({
     title: {
         color: 'white',
         marginBottom: 20,
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
         fontStyle: 'normal',
         [theme.breakpoints.down('xs')]: {
             fontSize: 35
         },
     },
     description: {
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.25)',
         fontStyle: 'normal',
         [theme.breakpoints.down('xs')]: {
             fontSize: 16

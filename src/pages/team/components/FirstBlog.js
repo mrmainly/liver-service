@@ -21,8 +21,6 @@ const useStyles = makeStyles((theme) => ({
     title: {
         marginBottom: 30,
         color: 'white',
-        textShadow: '0px 2px 3px rgba(0, 0, 0, 0.25)',
-
     },
     line: {
         height: 65,
