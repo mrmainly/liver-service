@@ -18,6 +18,7 @@ import CardInfo from './card/CardInfo'
 import { YellowSeparator } from './yellow-separator'
 import TextAndImg from './text-and-img'
 import CardMedia from './card/CardMedia'
+import ErrorScreen from './error-screen'
 
 import Header from './header'
 import Footer from './footer'
@@ -44,5 +45,6 @@ export {
     YellowSeparator,
     Footer,
     TextAndImg,
-    CardMedia
+    CardMedia,
+    ErrorScreen
 }

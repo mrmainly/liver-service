@@ -43,19 +43,19 @@ const UsefulLinks = () => {
     })
     const array = [
         {
-            img: '/image/Group-3691.png',
-            description: 'Правительство Республики Саха (Якутия)',
-            Link: 'https://www.sakha.gov.ru/'
+            img: '/image/palliative.png',
+            description: 'Про Паллиатив — все о помощи в конце жизни',
+            Link: 'https://pro-palliativ.ru/'
         },
         {
             img: '/image/Group-367(1)2.png',
-            description: 'Министерство здравоохранения Российской Федерации',
-            Link: 'https://minzdrav.gov.ru/'
+            description: 'Межрегиональная общественная организация нефрологических пациентов',
+            Link: 'https://nephroliga.ru/'
         },
         {
             img: '/image/Group-362(2).png',
-            description: 'Министерство здравоохранения Республики Саха (Якутия)',
-            Link: 'https://minzdrav.sakha.gov.ru/'
+            description: 'Благотворительный фонд помощи пожилым людям и инвалидам',
+            Link: 'https://starikam.org/'
         },
     ]
 

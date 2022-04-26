@@ -18,22 +18,22 @@ const OurProjectScreen = ({ pageHeader, ...props }) => {
         {
             img: '/image/Rectangle75.png',
             description: 'Школа домашнего ухода',
-            Link: 'https://www.sakha.gov.ru/'
+            Link: '/home-care-school'
         },
         {
             img: '/image/Rectangle175.png',
             description: 'Ресурсный центр поддержки семей с паллиативными пациентами',
-            Link: 'https://minzdrav.gov.ru/'
+            Link: '/help-family'
         },
         {
             img: '/image/Rectangle1754.png',
             description: 'Проект “Деменции нет”',
-            Link: 'https://minzdrav.sakha.gov.ru/'
+            Link: '/dementiaNo'
         },
         {
             img: '/image/Rectangle1752.png',
             description: 'Спецпроекты по донорству',
-            Link: 'https://minzdrav.sakha.gov.ru/'
+            Link: '/donation'
         },
     ]
     return (

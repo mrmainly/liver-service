@@ -1,13 +1,13 @@
 import React from 'react'
 
 import { Container } from '@material-ui/core'
-import { Layout } from '../../../components'
+import { Layout, ErrorScreen } from '../../../components'
 
 const HelpPalliative = () => {
     return (
         <Layout>
             <Container>
-                asd
+                <ErrorScreen />
             </Container>
         </Layout>
     )
