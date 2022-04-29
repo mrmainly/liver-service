@@ -26,6 +26,10 @@ class API {
         let result = await api(`api/v1/tags/`).get(null)
         return result
     }
+    async getVolunteers() {
+        let result = await api(`api/v1/volunteers/`).get(null)
+        return result
+    }
 }
 
 export default new API()

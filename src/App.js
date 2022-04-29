@@ -22,6 +22,7 @@ import Palliative from './pages/projects/palliative'
 import HelpPalliative from './pages/projects/helpPalliative'
 import DementiaNo from './pages/projects/dementiaNo'
 import SeriouslyIllFamily from './pages/projects/seriouslyIllFamily'
+import VolunteersDetail from './pages/volunteers/detail'
 
 import Donation from './pages/projects/donation'
 import ProjectNews from './pages/palliativeDropdown/projectNews';
@@ -68,6 +69,8 @@ function App() {
         <Route path="/dementiaNo" element={<DementiaNo />} />
         <Route path="/donation" element={<Donation />} />
         <Route path="/seriouslyIllFamily" element={<SeriouslyIllFamily />} />
+
+        <Route path="/volunteers-detail/:id" element={<VolunteersDetail />} />
 
       </Routes>
     </BrowserRouter>

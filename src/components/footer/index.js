@@ -114,7 +114,6 @@ export default function Footer(props) {
                         <Box style={{ marginBottom: 20, marginTop: 10 }}>
                             <IconButton size="small"><img src="/image/youtube.png" /></IconButton>
                             <IconButton size="small"><img src="/image/vk.png" /></IconButton>
-                            <IconButton size="small"><img src="/image/instagram.png" /></IconButton>
                         </Box>
                         <Typography variant="h6" style={{ marginBottom: 10 }}>ЕСТЬ ВОПРОСЫ?</Typography>
                         <Button>Задать вопрос</Button>

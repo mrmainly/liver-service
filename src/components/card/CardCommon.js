@@ -24,24 +24,24 @@ const useStyles = makeStyles((theme) => ({
 
     },
 }));
-const CardCommon = ({ description, title, price }) => {
+const CardCommon = ({ description, name, price, id }) => {
     const classes = useStyles();
     const navigate = useNavigate()
     return (
         <Box className={classes.root}>
-            <CardActionArea>
+            <CardActionArea onClick={() => navigate(`/volunteers-detail/${id}`, { state: { price: price, description: description, name: name } })}>
                 <Box className={classes.cardContent}>
                     <Box className={classes.titleBox}>
                         <Typography variant="h6" style={{ color: 'rgba(81, 165, 212, 1)' }}>
-                            {title}
+                            {name}
                         </Typography>
                         <Typography variant="body1" style={{ color: 'rgba(42, 95, 167, 1)' }}>
-                            {price}
+                            {price} руб
                         </Typography>
                     </Box>
-                    <Typography variant="body2" style={{ marginTop: 20 }}>
-                        {description}
-                    </Typography>
+                    <div dangerouslySetInnerHTML={{ __html: description }}>
+
+                    </div>
                 </Box>
             </CardActionArea>
         </Box>
