@@ -132,7 +132,7 @@ export default function Header() {
                     href: '/palliative'
                 },
                 {
-                    label: 'Спецпроекты по донерству',
+                    label: 'Спецпроекты по донорству',
                     href: '/donation'
                 },
                 {

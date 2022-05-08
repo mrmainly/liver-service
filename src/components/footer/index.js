@@ -31,19 +31,16 @@ export default function Footer(props) {
             options: [
                 {
                     label: 'Новости',
-                    to: ''
-                },
-                {
-                    label: 'Блог',
-                    to: ''
+                    to: '/news'
                 },
                 {
                     label: 'F.A.Q (помощь)',
-                    to: ''
+                    to: '/help'
                 },
                 {
                     label: 'Отчет',
-                    to: ''
+                    to: '/REPORT.pdf',
+                    type: 'file'
                 },
             ]
         },
@@ -77,15 +74,18 @@ export default function Footer(props) {
             options: [
                 {
                     label: 'ОГРН',
-                    to: ''
+                    to: '/documents-page',
+
                 },
                 {
                     label: 'ИНН',
-                    to: ''
+                    to: '/documents-page',
+
                 },
                 {
                     label: 'УСТАВ',
-                    to: ''
+                    to: '/documents-page',
+
                 },
             ]
         }
@@ -101,9 +101,15 @@ export default function Footer(props) {
                                 <Box className={classes.BorderLine}></Box>
                                 <Box style={{ display: 'flex', flexDirection: 'column' }}>
                                     {item.options.map((option, index) => (
-                                        <Link to={option.to} key={index} style={{ marginTop: 8, color: 'white', cursor: 'pointer' }}>
-                                            {option.label}
-                                        </Link>
+                                        option.type == 'file'
+                                            ?
+                                            <a style={{ marginTop: 8, color: 'white', cursor: 'pointer' }} href={option.to} target={'_blank'}>
+                                                {option.label}
+                                            </a>
+                                            :
+                                            <Link to={option.to} key={index} style={{ marginTop: 8, color: 'white', cursor: 'pointer' }}>
+                                                {option.label}
+                                            </Link>
                                     ))}
                                 </Box>
                             </Box>
@@ -119,6 +125,7 @@ export default function Footer(props) {
                         <Button>Задать вопрос</Button>
                     </Grid>
                 </Grid>
+
                 <Box style={{ marginTop: 20 }}>
                     <Box className={classes.BorderLine}></Box>
                     <Typography variant="body1" style={{ marginTop: 20 }}>Автономная некоммерческая организация "Комплексный центр медицинского и социального обслуживания населения" 2022</Typography>
