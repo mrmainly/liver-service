@@ -309,7 +309,7 @@ export default function Header() {
                         {item.menuElems.map((item, index) => (
                             <Box key={index}>
                                 {item.href ?
-                                    <Link to={item.href} className={linkStyle} key={index}>
+                                    <Link to={item.href} className={linkStyle}>
                                         <MenuItem >{item.label}</MenuItem>
                                     </Link>
                                     : <MenuItem

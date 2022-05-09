@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Blog = () => {
+const News = () => {
     const classes = useStyles()
     const [news, setNews] = useState([])
     const [count, setCount] = useState()
@@ -54,4 +54,4 @@ const Blog = () => {
     )
 }
 
-export default Blog
+export default News

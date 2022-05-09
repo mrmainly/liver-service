@@ -85,7 +85,6 @@ export default function Footer(props) {
                 {
                     label: 'УСТАВ',
                     to: '/documents-page',
-
                 },
             ]
         }
@@ -103,7 +102,7 @@ export default function Footer(props) {
                                     {item.options.map((option, index) => (
                                         option.type == 'file'
                                             ?
-                                            <a style={{ marginTop: 8, color: 'white', cursor: 'pointer' }} href={option.to} target={'_blank'}>
+                                            <a style={{ marginTop: 8, color: 'white', cursor: 'pointer' }} href={option.to} target={'_blank'} key={index}>
                                                 {option.label}
                                             </a>
                                             :

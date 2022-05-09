@@ -1,16 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { Container, CircularProgress } from '@material-ui/core'
+import { Pagination } from '@material-ui/lab'
 
-import { Container } from '@material-ui/core'
-import { Layout, ErrorScreen } from '../../../components'
+import API from '../../../api'
+import { Layout, PageHeader } from '../../../components'
+import NewsCardBlock from '../../news/components/NewsCardBlock'
 
-const ProjectNews = () => {
+const useStyles = makeStyles((theme) => ({
+    root: {
+        marginBottom: 100,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        paddingTop: 100
+    },
+}));
+
+const News = () => {
+    const classes = useStyles()
+    const [news, setNews] = useState([])
+    const [count, setCount] = useState()
+    const [currentPage, setCurrentPage] = useState(1)
+    const [loading, setLoading] = useState(true)
+    const [offset, setOffset] = useState()
+    const [tag, setTag] = useState()
+    useEffect(() => {
+        const getPosts = async () => {
+            await API.getTags().then((res) => {
+                const filterTag = res.data.filter((res) => {
+                    return res.name == 'НОВОСТИ ОТДЕЛЕНИЯ'
+                })
+                return filterTag
+            }).then((res) => {
+                API.getPosts(currentPage, res[0].id, offset).then((res) => {
+                    setLoading(true)
+                    setNews(res.data.results)
+                    setCount(res.data.count)
+                    setLoading(false)
+                })
+            })
+        }
+        getPosts()
+    }, [currentPage])
+
+    let countNumber = Math.ceil(count / 10)
+
     return (
         <Layout>
             <Container>
-                <ErrorScreen />
+                <div className={classes.root}>
+                    <PageHeader title="Новости отделения" />
+                    {loading && <CircularProgress style={{ marginTop: 50 }} />}
+                    <NewsCardBlock data={news} />
+                    <Pagination style={{ marginTop: 20 }} count={countNumber} onChange={(event, value) => setCurrentPage(value)} />
+                </div>
             </Container>
         </Layout>
     )
 }
 
-export default ProjectNews
+export default News

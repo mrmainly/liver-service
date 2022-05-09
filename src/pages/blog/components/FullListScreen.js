@@ -52,10 +52,12 @@ const FullListScreen = () => {
         document.getElementById('Content').style.height = '430px'
         setChange(true)
     }
+    console.log(currentTag)
     useEffect(() => {
         const getlist = async () => {
             await API.getTags().then((res) => {
                 setTags(res.data)
+                console.log(res.data)
             })
             await API.getPosts('', null, 1000).then((res) => {
                 setLoading(true)

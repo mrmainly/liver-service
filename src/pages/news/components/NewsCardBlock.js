@@ -14,7 +14,6 @@ const useStyles = makeStyles(() => ({
 
 const NewsCardBlock = ({ data }) => {
     const classes = useStyles()
-    console.log(data)
     return (
         <Container>
             <Grid container >

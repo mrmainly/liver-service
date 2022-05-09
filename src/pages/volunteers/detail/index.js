@@ -7,7 +7,6 @@ import { Layout, PageHeader } from '../../../components'
 
 const ValunteersDetail = () => {
     const location = useLocation()
-    console.log('location', location)
     return (
         <Layout>
             <Container>
