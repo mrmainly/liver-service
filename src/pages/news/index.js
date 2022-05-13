@@ -28,11 +28,18 @@ const News = () => {
     const [offset, setOffset] = useState()
     useEffect(() => {
         const getPosts = async () => {
-            API.getPosts(currentPage, offset).then((res) => {
-                setLoading(true)
-                setNews(res.data.results)
-                setCount(res.data.count)
-                setLoading(false)
+            await API.getTags().then((res) => {
+                const filterTag = res.data.filter((res) => {
+                    return res.name == 'НОВОСТИ ПРОЕКТА'
+                })
+                return filterTag
+            }).then((res) => {
+                API.getPosts(currentPage, res[0].id, offset).then((res) => {
+                    setLoading(true)
+                    setNews(res.data.results)
+                    setCount(res.data.count)
+                    setLoading(false)
+                })
             })
         }
         getPosts()
